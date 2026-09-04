@@ -351,3 +351,34 @@ getCart((order)=>{
 });
 
 
+
+const getCall1 = (callback) =>{
+ console.log('First print...');
+ callback('Then call the function back!');
+};
+
+getCall1((message)=>{
+console.log(message);
+});
+
+
+const errCall1 = (val , callback) =>{
+  setTimeout(()=>{
+    console.log("Chacking the value...");
+    // let value = 1;
+    if (val === 1){
+      callback(null , val);
+    }
+    else{
+      callback(" : value did't match!" , null);
+    }
+  },1000);
+}
+
+errCall1(1 , (error , data)=>{
+  if (error){
+    console.log("ERROR" , error);
+  }else{
+    console.log("The value is: " ,  data);
+  }
+});
