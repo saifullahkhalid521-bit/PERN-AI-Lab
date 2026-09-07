@@ -80,3 +80,28 @@ async function consumePromiseFive(){
 }
 
 consumePromiseFive();
+
+
+
+const prac = new Promise ((resolve , reject)=>{
+  let err = false;
+  if (!err){
+    const user = {
+      id: 101,
+      targen: "Your_self"
+    }
+    resolve(user);
+  }
+  else{
+    reject("something went wrong with data!");
+  }
+})
+.then((response)=>{
+  return response;
+})
+.then((data)=>{
+ console.log(data.targen);
+})
+.catch((err)=>{
+  console.log('ERROR: ', err);
+});

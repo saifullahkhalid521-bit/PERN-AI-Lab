@@ -39,26 +39,27 @@ new Promise ((resolve , reject) => {
   console.log("Ho gaya finally!");
 });
 
-
-const AAJA = new Promise ((resolve , reject)=>{
-  setTimeout(()=>{
-    let error = false;
-    if(!error){
-      const user = {
-        roll: 65,
-        sub: "JABHA_SCRIPT"
+function AAJA (){
+  return new Promise ((resolve , reject)=>{
+    setTimeout(()=>{
+      let error = false;
+      if(!error){
+        const user = {
+          roll: 65,
+          sub: "JABHA_SCRIPT"
+        }
+        resolve(user);
       }
-      resolve(user);
-    }
-    else{
-      reject("KAHA GAYA MERA JABHA😢");
-    }
-  },2000);
-})
+      else{
+        reject("KAHA GAYA MERA JABHA😢");
+      }
+    },2000);
+  })
+}
 
 async function JABHA () {
   try {
-    const le = await AAJA;
+    const le = await AAJA();
     console.log("YESSS😍 aa gaya mera",le.sub);
   } catch (err) {
       console.log(`ERROR: ${err}`);
