@@ -113,42 +113,67 @@
 
 //PUT request
 
-const updatedUser = {
-  name: 'Rahul Sharma',
-  email: 'rahul.sharma@example.com'
-};
+// const updatedUser = {
+//   name: 'Rahul Sharma',
+//   email: 'rahul.sharma@example.com'
+// };
 
-fetch('https://jsonplaceholder.typicode.com/users/1' , {
-  method:'PUT',
-  headers:{
-    'Content-Type':'application/json'
-  },
-  body: JSON.stringify(updatedUser)
+// fetch('https://jsonplaceholder.typicode.com/users/1' , {
+//   method:'PUT',
+//   headers:{
+//     'Content-Type':'application/json'
+//   },
+//   body: JSON.stringify(updatedUser)
+// })
+// .then(res => res.json())
+// .then(data => console.log('Updated:', data))
+// .catch(err => console.log('Error:', err));
+
+
+// const updataUser2 = {
+//   name : 'Saif',
+//   email : 'khalid45231@gmail.com'
+// }
+
+// fetch('https://jsonplaceholder.typicode.com/users/1' , {
+//   method: 'PUT',
+//   headers:{
+//     'Content-Type': 'application/json'
+//   },
+//   body: JSON.stringify(updataUser2)
+// })
+// .then((resp)=>{
+//   return resp.json();
+// })
+// .then((data)=>{
+//   console.log(data);
+// })
+// .catch((error)=>{
+//   console.log(error);
+// });
+
+//DELETE request
+// fetch('https://jsonplaceholder.typicode.com/users/5' , {
+//   method:'DELETE'
+// })
+// .then((res)=>{
+//   if(res.status === 200){
+//     console.log('User Delete Successfully');
+//   }else{
+//     console.log('Delete Failed');
+//   }
+// })
+// .catch(err => console.log('Error:', err));
+
+
+fetch('https://api.github.com/user', {
+    headers: {
+        'Authorization': 'Bearer YOUR_TOKEN_HERE',  // Authentication
+        'Content-Type': 'application/json',        // Data type
+        'Accept': 'application/json'               // Response type
+    }
 })
 .then(res => res.json())
-.then(data => console.log('Updated:', data))
+.then(data => console.log(data))
 .catch(err => console.log('Error:', err));
-
-
-const updataUser2 = {
-  name : 'Saif',
-  email : 'khalid45231@gmail.com'
-}
-
-fetch('https://jsonplaceholder.typicode.com/users/1' , {
-  method: 'PUT',
-  headers:{
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(updataUser2)
-})
-.then((resp)=>{
-  return resp.json();
-})
-.then((data)=>{
-  console.log(data);
-})
-.catch((error)=>{
-  console.log(error);
-});
 
