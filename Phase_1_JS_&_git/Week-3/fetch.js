@@ -166,14 +166,108 @@
 // .catch(err => console.log('Error:', err));
 
 
-fetch('https://api.github.com/user', {
-    headers: {
-        'Authorization': 'Bearer YOUR_TOKEN_HERE',  // Authentication
-        'Content-Type': 'application/json',        // Data type
-        'Accept': 'application/json'               // Response type
-    }
-})
-.then(res => res.json())
-.then(data => console.log(data))
-.catch(err => console.log('Error:', err));
+// fetch('https://api.github.com/user', {
+//     headers: {
+//         'Authorization': 'Bearer YOUR_TOKEN_HERE',  // Authentication
+//         'Content-Type': 'application/json',        // Data type
+//         'Accept': 'application/json'               // Response type
+//     }
+// })
+// .then(res => res.json())
+// .then(data => console.log(data))
+// .catch(err => console.log('Error:', err));
 
+
+
+//Error Handling
+// fetch('https://api.github.com/users/unknownuser12345')
+// .then((response)=>{
+//   if(!response.ok){
+//     throw new Error ('HTTP Error:', response.status);
+//   }
+//   return response.json();
+// })
+// .then((data)=>{
+//   console.log(data);
+// })
+// .catch(err=>{
+//   console.log(err.massage);
+// });
+
+
+// fetch('https://api.github.com/users/unknownuser12345')
+// .then((response)=>{
+//   if(!response.ok){
+//     throw new Error('Error:', response.status);
+//   }
+//   return response.json();
+// })
+// .then((data)=>{
+//   console.log(data);
+// })
+// .catch(err => console.log(err.massage));
+
+
+// fetch('https://api.github.com/users/unknownuser12345')
+// .then((response)=>{
+//   if(!response.ok){
+//     throw new Error ("Error: kuch to gadbad hai🥸", response.status);
+//   }
+//   return response.json();
+// })
+// .then((data)=>{
+//   console.log(data);
+// })
+// .catch((error)=>{
+//   console.log('Error 😈: ',error.massage);
+// })
+
+
+// Async/await version
+// async function getGitHubUser() {
+//     try{
+//       const res = await fetch('https://api.github.com/users/octocat');
+
+//       if (!res.ok){
+//         throw new Error (`HTTP ERROR: ${res.status}`);
+//       }
+
+//       const data = await res.json();
+//       console.log('Name:' , data.name);
+//       console.log('Bio:' , data.bio);
+//       return data;
+//     } catch (error) {
+//       console.log('Error:' ,error.message);
+//     }
+// }
+// getGitHubUser();
+
+
+const dataLo = {
+  name : 'Saif',
+  height : '5ft 10in'
+}
+async function getResult() {
+    try {
+      const response = await fetch('https://jsonplaceholder.typicode.com/posts' , {
+        
+        method: 'POST',
+        headers:{
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dataLo)
+      });
+
+      if (!response.ok){
+        throw new Error (`HTTP Error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log(data);
+      return data;
+    }catch(err){
+      console.log('error:', err);
+    }
+}
+
+getResult();

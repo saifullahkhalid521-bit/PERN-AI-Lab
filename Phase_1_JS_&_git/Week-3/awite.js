@@ -16,5 +16,28 @@ async function consumeTest() {
       console.log(error);
   }
 }
-
 consumeTest();
+
+
+const badmosi = new Promise ((resolve , reject) => {
+  let err = false;
+  if(!err){
+    const user = {
+      data: 'Khayega kela 🍌',
+      name: 'Appu Hatela 😈'
+    }
+    resolve(user);
+  }else{
+    reject('nahi mila kela😢');
+  }
+})
+async function gundai () {
+  try{
+    const response = await badmosi;
+    // console.log(badmosi);
+    console.log(`Mera naam hai ${response.name} , ${response.data}`);
+  }catch(err){
+    console.log(err);
+  }
+}
+gundai();
