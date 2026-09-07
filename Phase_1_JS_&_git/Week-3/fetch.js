@@ -1,40 +1,40 @@
-fetch('https://v2.jokeapi.dev/joke/Any?type=single')
-.then(Response =>{
-  return Response.json();
-})
-.then((data)=>{
-  console.log(data.joke);
-})
-.catch((err)=>{
-  console.log('ERROR: ', err);
-});
+// fetch('https://v2.jokeapi.dev/joke/Any?type=single')
+// .then(Response =>{
+//   return Response.json();
+// })
+// .then((data)=>{
+//   console.log(data.joke);
+// })
+// .catch((err)=>{
+//   console.log('ERROR: ', err);
+// });
 
 
 // Agar joke API down ho
-fetch('https://v2.jokeapi.dev/joke/Any?type=single')
-    .then(response => {
-        console.log('Status:', response.status);  // 200 (agar up hai)
-        console.log('OK?', response.ok);          // true
+// fetch('https://v2.jokeapi.dev/joke/Any?type=single')
+//     .then(response => {
+//         console.log('Status:', response.status);  // 200 (agar up hai)
+//         console.log('OK?', response.ok);          // true
         
-        if (!response.ok) {
-            throw new Error(`API Down! Status:  ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        if (data.joke) {
-            console.log('😂', data.joke);
-        } else {
-            console.log('No joke available');
-        }
-    })
-    .catch(error => {
-        // Yeh handle karega:
-        // - Network error (internet nahi hai)
-        // - API down (500 error)
-        // - 404 error
-        console.log('Something went wrong:', error.message);
-    });
+//         if (!response.ok) {
+//             throw new Error(`API Down! Status:  ${response.status}`);
+//         }
+//         return response.json();
+//     })
+//     .then(data => {
+//         if (data.joke) {
+//             console.log('😂', data.joke);
+//         } else {
+//             console.log('No joke available');
+//         }
+//     })
+//     .catch(error => {
+//         // Yeh handle karega:
+//         // - Network error (internet nahi hai)
+//         // - API down (500 error)
+//         // - 404 error
+//         console.log('Something went wrong:', error.message);
+//     });
 
 
 // fetch('https://jsonplaceholder.typicode.com/users')
@@ -53,53 +53,94 @@ fetch('https://v2.jokeapi.dev/joke/Any?type=single')
 
 
 // POST request
-const userData = {
-  name : 'Mr.Robot',
-  suj : 'Hacking',
-  id : 101,
-}
+// const userData = {
+//   name : 'Mr.Robot',
+//   suj : 'Hacking',
+//   id : 101,
+// }
 
-fetch('https://jsonplaceholder.typicode.com/users' , {
-  method: 'POST',
+// fetch('https://jsonplaceholder.typicode.com/users' , {
+//   method: 'POST',
+//   headers:{
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify(userData)
+// })
+// .then((res)=>res.json())
+// .then((data)=>console.log(data))
+// .catch((err)=>console.log(err));
+
+
+// const newData2 = {
+//   title: 'My Post',
+//   body: 'Content here',
+//   userId: 1,
+// }
+
+// fetch('https://jsonplaceholder.typicode.com/posts', {
+//   method: 'POST',
+//   headers:{
+//     'Content-Type': 'application/json'
+//   },
+//   body: JSON.stringify(newData2)
+// })
+// .then(res=>res.json())
+// .then(data=>console.log(data))
+// .catch(err=>console.log(err));
+
+
+// const newData3 ={
+//   name : 'Ego',
+//   age : 'Infinity',
+//   job : 'fuck you',
+// }
+// fetch('https://jsonplaceholder.typicode.com/posts' , {
+//   method: 'POST',
+//   headers:{
+//     'Content-Type': 'application/json'
+//   },
+//   body: JSON.stringify(newData3)
+// })
+// .then((resp)=>{
+//   return resp.json();
+// })
+// .then((data)=>{
+//   console.log(data);
+// })
+// .catch((err)=>{
+//   console.log(err);
+// });
+
+//PUT request
+
+const updatedUser = {
+  name: 'Rahul Sharma',
+  email: 'rahul.sharma@example.com'
+};
+
+fetch('https://jsonplaceholder.typicode.com/users/1' , {
+  method:'PUT',
   headers:{
-    'Content-Type': 'application/json',
+    'Content-Type':'application/json'
   },
-  body: JSON.stringify(userData)
+  body: JSON.stringify(updatedUser)
 })
-.then((res)=>res.json())
-.then((data)=>console.log(data))
-.catch((err)=>console.log(err));
+.then(res => res.json())
+.then(data => console.log('Updated:', data))
+.catch(err => console.log('Error:', err));
 
 
-const newData2 = {
-  title: 'My Post',
-  body: 'Content here',
-  userId: 1,
+const updataUser2 = {
+  name : 'Saif',
+  email : 'khalid45231@gmail.com'
 }
 
-fetch('https://jsonplaceholder.typicode.com/posts', {
-  method: 'POST',
+fetch('https://jsonplaceholder.typicode.com/users/1' , {
+  method: 'PUT',
   headers:{
     'Content-Type': 'application/json'
   },
-  body: JSON.stringify(newData2)
-})
-.then(res=>res.json())
-.then(data=>console.log(data))
-.catch(err=>console.log(err));
-
-
-const newData3 ={
-  name : 'Ego',
-  age : 'Infinity',
-  job : 'fuck you',
-}
-fetch('https://jsonplaceholder.typicode.com/posts' , {
-  method: 'POST',
-  headers:{
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(newData3)
+  body: JSON.stringify(updataUser2)
 })
 .then((resp)=>{
   return resp.json();
@@ -107,6 +148,7 @@ fetch('https://jsonplaceholder.typicode.com/posts' , {
 .then((data)=>{
   console.log(data);
 })
-.catch((err)=>{
-  console.log(err);
+.catch((error)=>{
+  console.log(error);
 });
+
