@@ -243,31 +243,48 @@
 // getGitHubUser();
 
 
-const dataLo = {
-  name : 'Saif',
-  height : '5ft 10in'
-}
-async function getResult() {
-    try {
-      const response = await fetch('https://jsonplaceholder.typicode.com/posts' , {
+// const dataLo = {
+//   name : 'Saif',
+//   height : '5ft 10in'
+// }
+// async function getResult() {
+//     try {
+//       const response = await fetch('https://jsonplaceholder.typicode.com/posts' , {
         
-        method: 'POST',
-        headers:{
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dataLo)
-      });
+//         method: 'POST',
+//         headers:{
+//           'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(dataLo)
+//       });
 
-      if (!response.ok){
-        throw new Error (`HTTP Error: ${response.status}`);
-      }
+//       if (!response.ok){
+//         throw new Error (`HTTP Error: ${response.status}`);
+//       }
 
-      const data = await response.json();
-      console.log(data);
-      return data;
-    }catch(err){
-      console.log('error:', err);
+//       const data = await response.json();
+//       console.log(data);
+//       return data;
+//     }catch(err){
+//       console.log('error:', err);
+//     }
+// }
+// getResult();
+
+
+async function today01 () {
+  try{
+    const response = await fetch('https://api.github.com/users/octocat');
+
+    if(!response.ok){
+      throw new Error ('HTTP Error:', response.status);
     }
-}
 
-getResult();
+    const data = await response.json();
+    console.log(data);
+    return data;
+  }catch(err){
+    console.log('Error:',err.message);
+  }
+}
+today01();

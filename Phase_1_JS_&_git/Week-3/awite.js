@@ -41,3 +41,27 @@ async function gundai () {
   }
 }
 gundai();
+
+
+const  villain2 = new Promise ((resolve , reject) => {
+  let error = true;
+  if (!error){
+     const user = {
+      name: 'Bulla',
+      data : 'rakhta hu khulla',
+     }
+     resolve (user);
+  }else {
+    reject('Aaj band hai!😒');
+  }
+})
+
+async function bulla () {
+  try{
+    const response = await villain2;
+    console.log(`Mera naam hai ${response.name} , ${response.data}😈`);
+  }catch(err){
+    console.log(`ERROR: ${err}`);
+  }
+}
+bulla();
