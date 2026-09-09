@@ -194,6 +194,60 @@ fetch('https://jsonplaceholder.typicode.com/users/4')
 })
 // 😈
 
+// 🥸
+async function getData() {
+    try {
+
+        // 1. Get user
+        const response = await fetch(
+            'https://jsonplaceholder.typicode.com/users/4'
+        );
+
+        if (!response.ok) {
+            throw new Error(`HTTP Error: ${response.status}`);
+        }
+
+        const user = await response.json();
+
+        console.log("User:", user.name);
+
+
+        // 2. Get posts
+        const postResponse = await fetch(
+            `https://jsonplaceholder.typicode.com/posts?userId=${user.id}`
+        );
+
+        if (!postResponse.ok) {
+            throw new Error(`HTTP Error: ${postResponse.status}`);
+        }
+
+        const posts = await postResponse.json();
+
+        console.log("Post:", posts[1].title);
+
+
+        // 3. Get comments
+        const commentResponse = await fetch(
+            `https://jsonplaceholder.typicode.com/comments?postId=${posts[1].id}`
+        );
+
+        if (!commentResponse.ok) {
+            throw new Error(`HTTP Error: ${commentResponse.status}`);
+        }
+
+        const comments = await commentResponse.json();
+
+        comments.forEach((comment, index) => {
+            console.log(`Comment ${index + 1}: ${comment.name}`);
+        });
+
+    } catch (error) {
+        console.log("Error:", error.message);
+    }
+}
+
+getData();
+// 🥸
 
 // promise nesting
 // getUser()
