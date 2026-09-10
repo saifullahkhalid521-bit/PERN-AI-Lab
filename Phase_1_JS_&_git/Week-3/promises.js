@@ -342,3 +342,20 @@ async function getDataAll() {
     }
 }
 getDataAll();
+
+//Promise.rece()
+
+const race1 = new Promise ((resolve)=>{
+  setTimeout(()=>{
+    resolve('Wo aa gaya! , 3 second mai🍌');
+  },3000);
+})
+
+const race2 = new Promise ((resolve)=>{
+  setTimeout(()=>{
+    resolve('kesa hai 😘');
+  },2000);
+})
+
+const result = await Promise.race([race1 ,race2])
+console.log(result);
