@@ -279,7 +279,7 @@ const first = new Promise ((resolve , reject)=>{
 const second = new Promise ((resolve , reject)=>{
   setTimeout(()=>{
     resolve("How is second here ?");
-  }, 4000);
+  }, 2000);
 })
 
 const thried = new Promise ((resolve , reject)=>{
@@ -298,4 +298,26 @@ Promise.all([first , second , thried])
 })
 .catch((err)=>{
   console.log('your rejection is: ',err)
+})
+
+//promise.all() with fetch
+const user1 = fetch('https://api.github.com/users/octocat')
+.then(response => response.json());
+
+const user2 = fetch('https://api.github.com/users/gaearon')
+.then(response => response.json());
+
+const user3 = fetch('https://api.github.com/users/sindresorhus')
+.then(response => response.json());
+
+Promise.all([user1 ,user2 , user3])
+.then((response)=>{
+  setTimeout(()=>{
+    console.log(response[0].name);
+  console.log(response[1].name);
+  console.log(response[2].name);
+  },3000);
+})
+.catch((err)=>{
+  console.log('Error: ', err);
 })
