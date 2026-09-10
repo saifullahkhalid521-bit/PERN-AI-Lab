@@ -267,4 +267,35 @@ getData();
 
 //     });
 
-// 🥸
+
+
+// Promise.all()
+const first = new Promise ((resolve , reject)=>{
+  setTimeout(()=>{
+    resolve ('How is first ?');
+  },2000)
+})
+
+const second = new Promise ((resolve , reject)=>{
+  setTimeout(()=>{
+    resolve("How is second here ?");
+  }, 4000);
+})
+
+const thried = new Promise ((resolve , reject)=>{
+  setTimeout(()=>{
+    resolve("How is thired here ?");
+  }, 2000);
+})
+
+console.log('Getting you questions!');
+
+Promise.all([first , second , thried])
+.then((response)=>{
+  console.log(response[0]);
+  console.log(response[1]);
+  console.log(response[2]);
+})
+.catch((err)=>{
+  console.log('your rejection is: ',err)
+})
