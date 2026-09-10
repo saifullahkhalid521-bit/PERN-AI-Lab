@@ -321,3 +321,24 @@ Promise.all([user1 ,user2 , user3])
 .catch((err)=>{
   console.log('Error: ', err);
 })
+
+//Promise.all() with async/await
+async function getDataAll() {
+    try{
+      const [user , posts] = await Promise.all([
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then(response => response.json()),
+
+        fetch("https://jsonplaceholder.typicode.com/posts")
+        .then(response => response.json()),
+      ])
+
+      setTimeout(()=>{
+      console.log("User: " ,user[0].name);
+      console.log("Posts: ", posts[1].title);
+      },3000);
+    }catch(err){
+      console.log('Error:', err.message);
+    }
+}
+getDataAll();
