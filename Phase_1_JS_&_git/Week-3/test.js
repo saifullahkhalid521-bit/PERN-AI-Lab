@@ -1,25 +1,27 @@
-const dataOne = new Promise (resolve => 
-{
-  setTimeout(()=>{
-    resolve('I am the first data 😈');
-  },2000);
-})
- 
-const dataTwo = new Promise ( resolve => 
-{
-  setTimeout(()=>{
-    resolve('I am second data 😘')
-  },2000);
-}
-);
 
-async function dataAll() {
-  try{
-    const [One , Two] = await Promise.all([dataOne , dataTwo])
-      console.log(One);
-      console.log(Two);
-  }catch(err){
-    console.log(err);
-  }
+async function fetcHeKrDe() {
+    try{
+      const [user , post] = await Promise.all([
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then(res =>{
+          if(!res.ok){
+            throw new Error (`HTTP Error: ${res.status}`)
+          }
+          return res.json();
+        }),
+
+        fetch("https://jsonplaceholder.typicode.com/posts")
+        .then(res => {
+          if(!res.ok){
+            throw new Error (`HTTP Error: ${res.status}`)
+          }
+          return res.json();
+        })
+      ]);
+      console.log("User😁: ",user[0].name);
+      console.log("Posts😎: ", post[0].title);
+    }catch(err){
+      console.log(err.message);
+    }
 }
-dataAll();
+fetcHeKrDe();
