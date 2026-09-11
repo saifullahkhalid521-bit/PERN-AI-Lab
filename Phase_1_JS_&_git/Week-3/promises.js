@@ -359,3 +359,23 @@ const race2 = new Promise ((resolve)=>{
 
 const result = await Promise.race([race1 ,race2])
 console.log(result);
+
+// Practice
+const prac1 = function () {
+  return new Promise ((resolve , reject) =>{
+    let err = false;
+    if(!err){
+      resolve("Problem resolved! 😊");
+    }
+    else {
+      reject(`something went wrong! 😢`);
+    }
+  })
+}
+prac1()
+.then((response)=>{
+  console.log(response);
+})
+.catch((err)=>{
+  console.log(`HTTP Error: ${err}`);
+})
