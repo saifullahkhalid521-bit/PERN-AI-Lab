@@ -379,3 +379,30 @@ prac1()
 .catch((err)=>{
   console.log(`HTTP Error: ${err}`);
 })
+
+
+// promise.all()
+const dataOne = new Promise ((resolve , reject) =>{
+  setTimeout(()=>{
+    resolve('Data one found!👌');
+  },3000)
+})
+
+const dataTwo = new Promise ((resolve , reject)=> {
+  setTimeout(()=>{
+    resolve('Data two also found! 😘');
+  },2500)
+})
+
+
+const dataAll = Promise.all([dataOne , dataTwo]);
+
+dataAll
+.then((response)=>{
+  console.log(response[0]);
+  console.log(response[1]);
+})
+.catch((err)=>{
+  console.log(err);
+})
+
