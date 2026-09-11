@@ -406,3 +406,43 @@ dataAll
   console.log(err);
 })
 
+//Chaining
+
+async function getDataOfUser() {
+  try{
+    const userData = await fetch('https://jsonplaceholder.typicode.com/users/3')
+    .then(res => {
+      if(!res.ok){
+        throw new Error (`HTTP Error: ${res.status}`);
+      }
+      return res.json();
+    })
+    .then(user => {
+      console.log('User😊: ',user.name);
+      return fetch(`https://jsonplaceholder.typicode.com/posts?userId=${user.id}`);
+    })
+    .then(res => {
+      if(!res.ok){
+        throw new Error (`HTTP Error: ${res.status}`)
+      }
+      return res.json();
+    })
+    .then(post => {
+      console.log('Post✅: ',post[2].title);
+      return fetch(`https://jsonplaceholder.typicode.com/comments?postId=${post[2].id}`)
+    })
+    .then(res => {
+      if(!res.ok){
+        throw new Error (`HTTP Error: ${res.status}`)
+      }
+      return res.json();
+    })
+    .then(comment => {
+      console.log('Comment✅: ',comment[0].name);
+    })
+  }catch(err){
+    console.log(err);
+  }
+}
+
+getDataOfUser();
