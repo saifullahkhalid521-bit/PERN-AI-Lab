@@ -444,5 +444,4 @@ async function getDataOfUser() {
     console.log(err);
   }
 }
-
 getDataOfUser();
