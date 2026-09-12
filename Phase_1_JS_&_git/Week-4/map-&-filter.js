@@ -35,5 +35,23 @@ const lele = (elem) =>{
 //   return elem.toUpperCase();
 // }
 const nameUpM = names.map(lele);
-
 console.log(nameUpM);
+
+
+const numbers = [5 , 10 ,15 , 20];
+const squares = numbers.map((elem)=>{
+  return elem * 2 ;
+});
+console.log(squares);
+
+const namesHai = ['saif' , 'robot' , 'ego'];
+const nameUpperCase = namesHai.map((elem)=>{
+  return elem.toUpperCase();
+});
+console.log(nameUpperCase);
+
+const prices = [100 , 200 , 300 , 400];
+const gstPrices = prices.map((elem)=>{
+  return elem + (elem * 0.18);
+})
+console.log(gstPrices);
