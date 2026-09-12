@@ -55,3 +55,21 @@ const gstPrices = prices.map((elem)=>{
   return elem + (elem * 0.18);
 })
 console.log(gstPrices);
+
+const fruits = ["Apple", "Mango", "Banana" , "Orange"];
+const indexFruits = fruits.map((elem , index)=>{
+  return `${index+1} - ${elem}`;
+})
+console.log(indexFruits);
+
+const students = [
+  {name: 'Saif', marks: 85},
+  {name: 'Robot', marks: 72},
+  {name: 'Ego', marks: 91},
+  {name: 'Khalid', marks: 64},
+]
+
+const formatStudents = students.map((elem)=>{
+  return `${elem.name} scored ${elem.marks}`;
+})
+console.log(formatStudents);
