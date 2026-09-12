@@ -73,3 +73,28 @@ const formatStudents = students.map((elem)=>{
   return `${elem.name} scored ${elem.marks}`;
 })
 console.log(formatStudents);
+
+//Filter()
+
+const numberF = [10 , 15 , 20 , 25 , 30 , 35];
+const filterNubmer = numberF.filter((elem)=>{
+  return elem % 2 === 0;
+}) 
+console.log(filterNubmer);
+
+const ages = [12 ,18 ,25 , 15 ,30 ,16 ,22];
+const ageFilter = ages.filter((elem)=>{
+  return elem >= 18;
+})
+console.log(ageFilter);
+
+const words = ['cat' , 'elephant' , 'dog' , 'giraffe' ,'ant' ,'tiger'];
+const filterWordsByLength = words.filter((elem)=>{
+  return elem.length > 4 ;
+})
+console.log(filterWordsByLength);
+
+const mixed = [0, "hello", "", null, 42, undefined, false, "world", NaN];
+const filterMixed = mixed.filter(Boolean);
+// mixed.filter(element => Boolean(element))
+console.log(filterMixed);
