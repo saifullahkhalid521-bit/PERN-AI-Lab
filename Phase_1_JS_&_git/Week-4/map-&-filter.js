@@ -144,3 +144,39 @@ const filterUsers = users.filter((elem)=>{
   return elem.age >= 18 && elem.active === true;
 })
 console.log(filterUsers);
+
+const fruit = ["Apple", "Banana", "Cherry", "Apricot", "Blueberry"];
+const filterFruit = fruit.filter((elem)=>{
+  return elem.toLowerCase().startsWith("a")
+})
+console.log(filterFruit)
+
+//Advanced
+const nums = [1 , 2 ,2 , 3 , 4 , 4 ,5 ,1 ];
+const filterNums = nums.filter((elem , i)=>{
+  return nums.indexOf(elem) === i;
+})
+console.log(filterNums);
+
+const letters = ["a", "b", "c", "d", "e", "f"];
+const filterLetters = letters.filter((elem , i)=>{
+  return i % 2 === 0 ;
+})
+console.log(filterLetters);
+
+//filter and map combo
+const orders = [
+  { id: 1, total: 120, status: "shipped" },
+  { id: 2, total: 80, status: "pending" },
+  { id: 3, total: 200, status: "shipped" },
+  { id: 4, total: 50, status: "shipped" }
+];
+// Get IDs of shipped orders over $100 → [1, 3]
+
+const fitlerOrders = orders.filter((elem)=>{
+  return elem.total > 100 && elem.status === 'shipped';
+}).map((elem)=>{
+  return elem.id;
+})
+console.log(fitlerOrders);
+
