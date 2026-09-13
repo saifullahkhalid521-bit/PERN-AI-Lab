@@ -74,6 +74,11 @@ const formatStudents = students.map((elem)=>{
 })
 console.log(formatStudents);
 
+const numbersE = [10 , 20 , 30 , 40];
+const resultE = numbersE.map(elem => elem + 5 + '😊');
+console.log(resultE);
+
+
 //Filter()
 
 const numberF = [10 , 15 , 20 , 25 , 30 , 35];
@@ -98,3 +103,44 @@ const mixed = [0, "hello", "", null, 42, undefined, false, "world", NaN];
 const filterMixed = mixed.filter(Boolean);
 // mixed.filter(element => Boolean(element))
 console.log(filterMixed);
+
+const agesF = [12 , 18 , 25 , 30 , 16 , 22];
+const filterAge = agesF.filter((elem)=>{
+  return elem > 17;
+})
+console.log(filterAge);
+
+const studentsF = [
+  {name: "Saif" , marks: 85},
+  {name: "Robot" , marks: 45},
+  {name: "Ego" , marks: 72},
+  {name: "Khalid" , marks: 38}
+]
+const filterStudents = studentsF.filter((elem)=>{
+  return elem.marks >= 50;
+})
+.map(elem => elem.name);
+console.log(filterStudents);
+
+const products = [
+  {name: "Laptop" , price: 60000},
+  {name: "Mouse" , price: 800},
+  {name: "Keyboard" , price: 2500},
+  {name: "Monitor" , price: 15000},
+  {name: "Headphones" , price: 3000}
+];
+const filterProduct = products.filter((elem)=>{
+  return elem.price < 5000;
+})
+console.log(filterProduct);
+
+const users = [
+  {name: 'Saif', age: 22, active: true},
+  {name: 'Robot', age: 17, active: true},
+  {name: 'Ego', age: 25, active: true},
+  {name: 'Khlaid', age: 21, active: true}
+]
+const filterUsers = users.filter((elem)=>{
+  return elem.age >= 18 && elem.active === true;
+})
+console.log(filterUsers);
