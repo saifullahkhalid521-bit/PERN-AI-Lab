@@ -89,3 +89,42 @@ console.log(findNumsG);
 const fruits = ["apple", "banana", "cherry", "date"];
 const findFruit = fruits.findIndex(elem => elem === 'cherry');
 console.log(findFruit);
+
+//Bonus questions
+const usersM = [
+  { name: "Alice", email: "alice@yahoo.com" },
+  { name: "Bob", email: "bob@gmail.com" },
+  { name: "Charlie", email: "charlie@gmail.com" }
+];
+const findGmail = usersM.find(elem => elem.email.endsWith('@gmail.com'));
+//use endsWith() method
+console.log(findGmail);
+
+const dupli = [1 , 2 , 3 , 4 , 2 , 5];
+const findDupli = dupli.find((elem , i) => dupli.indexOf(elem) !== i);
+console.log(findDupli);
+
+const nullVal = [1, "a", null, 4, null];
+const findNull = nullVal.find((elem ,i) => elem === null);
+console.log(findNull);
+
+const dates = [
+  "2023-05-15",
+  "2025-12-01",
+  "2026-08-10",
+  "2027-09-15",
+  "2026-10-25",
+];
+const today = new Date();
+const findNextDate = dates.find(elem => new Date(elem) > today);
+console.log(findNextDate);
+
+const usersC = [
+  { id: 1, name: "Alexander" },
+  { id: 2, name: "Zachary" },
+  { id: 3, name: "Elizabeth" },
+  { id: 4, name: "AZIZ" },
+  { id: 5, name: "Sarah" }
+];
+const findUserContain = usersC.find(elem => elem.name.toLowerCase().includes('z'));
+console.log(findUserContain);
