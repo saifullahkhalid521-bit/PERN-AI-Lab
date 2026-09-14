@@ -240,3 +240,48 @@ const emails = [
 const checkEmails = emails.some(elem => !elem.includes('@'));
 console.log("✅😊")
 console.log(checkEmails);
+
+
+//every()
+console.log('level 1 👍');
+const numsE = [1 , 2 , 3 , 4 , 5];
+const numsEv = numsE.every(elem => elem > 0);
+console.log(numsEv);
+
+const wordsE = ["apple" , "banana" , "cat" , "dog"];
+const wordsEv = wordsE.every(elem => elem.length > 3);
+console.log(wordsEv);
+
+const arrE = ["hello" , "world" ,"js"];
+const arrEv =arrE.every(elem => typeof elem === "string");
+console.log(arrEv);
+
+const numsE2 = [2 , 4 , 6 , 7 , 8];
+const numsEv2 = numsE2.every(elem => elem % 2 === 0);
+console.log(numsEv2);
+
+console.log("Level 2😎");
+const usersE18 = [
+  {name: "Alice" , age: 25},
+  {name: "Bob" , age: 17},
+  {name: "Charlie" , age: 30}
+]
+const usersEv18 = usersE18.every(elem => elem.age >= 18);
+console.log(usersEv18);
+
+const productsE = [
+  {name: "Book" ,inStock: true},
+  {name: "Pen" ,inStock: true},
+  {name: "Laptop" ,inStock: true}
+];
+const productsEv = productsE.every(elem => elem.inStock);
+console.log(productsEv);
+
+const usersErole = [
+  {name: "A" , role: "admin"},
+  {name: "B" , role: "user"},
+  {name: "C" , role: ""}
+]
+const usersEVrole = usersErole.every(elem => elem.role.trim() !== "");
+console.log(usersEVrole);
+
