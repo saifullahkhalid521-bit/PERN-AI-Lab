@@ -285,3 +285,98 @@ const usersErole = [
 const usersEVrole = usersErole.every(elem => elem.role.trim() !== "");
 console.log(usersEVrole);
 
+
+console.log("Level 3 🤐");
+
+const fieldsE = ["john" , "doe" , "john@example.com"];
+const fieldsEv = fieldsE.every(elem => elem.trim() !== "");
+console.log(fieldsEv);
+
+const cartE = [
+  {item: "T-shirt" , price: 25},
+  {item: "Shoes" , price: 80},
+  {item: "Laptop" , price: 1200}
+]
+const cartEv = cartE.every(elem => elem.price < 1000);
+console.log(cartEv);
+
+const userRolesE = ["admin" , "editor" , "viewer"];
+const neededRolesE = ["admin" , "editor"];
+const neededRolesEv = neededRolesE.every(elem => userRolesE.includes(elem));
+console.log(neededRolesEv);
+
+
+console.log("Level 4 😈");
+
+console.log([].every(() => false));
+console.log([].every(() => true));
+console.log([1, 2, 3].every(n => n > 0));
+/*true    ← empty array → always true
+true    ← empty array → always true
+true    ← all positive */
+
+const numsEc = [2, 4, 5, 6, 8];
+numsEc.every(n => {
+  console.log("checking", n);
+  return n % 2 === 0;
+});
+/*checking 2
+checking 4
+checking 5 */
+
+const emailsE = [
+  "a@test.com" , "b@test.com" , "invalid-email" , "c@test.com"
+]
+const emailsEv = emailsE.every(elem => elem.includes("@"))
+console.log(emailsEv);
+
+const numsRefac = [2 , 4 , 6 , 8];
+let allEven = true;
+for (let i = 0; i<numsRefac.length ; i++){
+  if(numsRefac[i] % 2 !== 0){
+    allEven = false;
+    break;
+  }
+}
+console.log(allEven);
+
+const numsRefac2 = [2 , 4 , 6 , 8];
+const numsRefacV = numsRefac2.every(elem => elem % 2 === 0);
+console.log(numsRefacV);
+
+
+console.log("Bonus Qs 🫡");
+const numPs = [1 ,4 ,9 ,16];
+const numPsV = numPs.every(elem => Math.sqrt(elem));
+console.log(numPsV);
+
+const wordE = ["cat" ,'bee' , 'apple']
+const wordEv = wordE.every(elem => elem.includes('a'));
+console.log(wordEv);
+
+const productUnH = [
+  {name: 'Water-bottle', inStock: true , price: 40},
+  {name: 'Note-Book', inStock: true , price: 20},
+  {name: 'T-shirt', inStock: true , price: 60},
+  {name: 'Table', inStock: true , price: 90},
+]
+const productUnHV = productUnH.every(elem => elem.price < 100 && elem.inStock);
+console.log(productUnHV);
+
+const nullE = [
+  {},{},null
+]
+const nullEv = nullE.every(elem => elem === null);
+console.log(nullEv);
+
+const dateE = [
+  "2026-03-15", 
+  "2026-01-01", 
+  "2024-03-20", 
+  "2026-02-15", 
+  "2025-08-05"  
+];
+const aaj = new Date();
+const dateEv = dateE.every(elem => new Date(elem) < aaj);
+console.log(dateEv);
+
