@@ -38,3 +38,30 @@ const students = [
 ];
 const findStudent = students.find(elem => elem.score > 90)
 console.log(findStudent);
+
+//Level 3 
+// 🔴
+const usersA = [
+  { name: "A", role: "user", active: true },
+  { name: "B", role: "admin", active: false },
+  { name: "C", role: "admin", active: true },
+  { name: "D", role: "admin", active: true }
+];
+const findActiveUser = usersA.find(elem => elem.role === 'admin' && elem.active);
+console.log(findActiveUser);
+
+const usersE = [
+  { id: 1, name: "Alice" },
+  { id: 2, name: "Bob" }
+];
+const finduserE = usersE.find(elem => elem.id === 99);
+console.log(finduserE ? finduserE.name : "User not fond");
+
+const cart = [
+  { item: "T-shirt", price: 25 },
+  { item: "Shoes", price: 80 },
+  { item: "Phone", price: 600 },
+  { item: "Laptop", price: 1200 }
+];
+const findProd = cart.find(elem => elem.price > 100);
+console.log(findProd);
