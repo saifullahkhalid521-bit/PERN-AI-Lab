@@ -65,3 +65,27 @@ const cart = [
 ];
 const findProd = cart.find(elem => elem.price > 100);
 console.log(findProd);
+
+//Level 4
+const numsU = [1, 2, 3, 4, 5];
+const result = numsU.find(n => n > 10);
+console.log(result);
+console.log(numsU.find(n => n === 3));
+console.log(numsU.find(n => n === 99));
+/* undefined   ← nothing > 10
+3           ← found 3
+undefined   ← 99 not in array*/
+
+const numsF = [4, 8, 15, 16, 23, 42];
+console.log(numsF.filter(n => n > 10));
+console.log(numsF.find(n => n > 10));
+/* in filter it will return [15 , 16 , 23 , 42]
+in find it will return only 15*/
+
+const numsG = [2 , 4 , 6 , 8 , 10 , 3 , 12];
+const findNumsG = numsG.find(elem => elem>5 && elem % 2 === 0);
+console.log(findNumsG);
+
+const fruits = ["apple", "banana", "cherry", "date"];
+const findFruit = fruits.findIndex(elem => elem === 'cherry');
+console.log(findFruit);
