@@ -137,7 +137,7 @@ console.log(filterProduct);
 const users = [
   {name: 'Saif', age: 22, active: true},
   {name: 'Robot', age: 17, active: true},
-  {name: 'Ego', age: 25, active: true},
+  {name: 'Ego', age: 25, active: false},
   {name: 'Khlaid', age: 21, active: true}
 ]
 const filterUsers = users.filter((elem)=>{
@@ -180,3 +180,21 @@ const fitlerOrders = orders.filter((elem)=>{
 })
 console.log(fitlerOrders);
 
+
+// Build reusable filters
+const isEven = n => n % 2 === 0;
+const isPositive = n => n > 0;
+const isMultipleOf = (n, m) => n % m === 0;
+
+// Then apply: positive even numbers divisible by 3
+const numsF = [9 , -2 , 4 , 12 , 18 , 24 , 6];
+const result = numsF
+  .filter(isPositive)
+  .filter(isEven)
+  .filter(n => isMultipleOf(n, 3))
+  .filter(lol);
+console.log(result);
+
+function lol (n) {
+  return n > 10;
+}
