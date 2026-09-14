@@ -12,3 +12,29 @@ const numsN = [5 , 8 , -3 , 10 , -7 , 2];
 const findnumsN = numsN.find(elem => elem < 0);
 console.log(findnumsN);
 
+//Level 2
+const users = [
+  {name: "Alice" , age: 25},
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 22 }
+]
+const findUser = users.find(elem => elem.name === "Charlie");
+console.log(findUser);
+
+const products = [
+  { name: "Book", inStock: true },
+  { name: "Pen", inStock: true },
+  { name: "Laptop", inStock: false },
+  { name: "Mouse", inStock: false }
+];
+const findProduct = products.find(elem => elem.inStock === false);
+console.log(findProduct);
+
+const students = [
+  { name: "Sam", score: 78 },
+  { name: "Rita", score: 92 },
+  { name: "Tom", score: 88 },
+  { name: "Zara", score: 95 }
+];
+const findStudent = students.find(elem => elem.score > 90)
+console.log(findStudent);
