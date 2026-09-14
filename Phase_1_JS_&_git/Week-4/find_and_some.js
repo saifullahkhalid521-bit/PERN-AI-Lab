@@ -128,3 +128,22 @@ const usersC = [
 ];
 const findUserContain = usersC.find(elem => elem.name.toLowerCase().includes('z'));
 console.log(findUserContain);
+
+
+//some() method
+//level 1
+const numb = [5 ,20 , 150 ,8 ,90];
+const someNumb = numb.some(elem => elem > 100);
+console.log(someNumb);
+
+const wordsS = ['cat' , 'dog' , 'elephant' ,'ant'];
+const wordsSome = wordsS.some(elem => elem.length > 6);
+console.log(wordsSome);
+
+const arr = [1 ,2 ,'hello', null , 5];
+const someArr = arr.some(elem => elem === null);
+console.log(someArr);
+
+const numbsN = [3 , 7 ,11 ,2 ,8];
+const sNumbsN = numbsN.some(elem => elem < 0);
+console.log(sNumbsN);
