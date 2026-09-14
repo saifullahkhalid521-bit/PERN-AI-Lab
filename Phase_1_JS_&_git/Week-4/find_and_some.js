@@ -192,3 +192,51 @@ const neededRoles = ["admin" , "editor"];
 const permissionCheck = userRoles.some(elem => neededRoles.includes(elem));
 console.log(permissionCheck);
 
+
+//Level 4 
+console.log('level 4🤐')
+console.log([].some(() => true));
+console.log([].some(() => false));
+console.log([1, 2, 3].some(n => n > 3));
+/*false   ← empty array always returns false
+false   ← empty array always returns false
+false   ← no element > 3*/
+
+const namesJ = ["Alice" , "Bob" , "John" , "Jane"];
+const namesJcheck = namesJ.some(elem => elem.toLowerCase().startsWith('j'));
+console.log(namesJcheck);
+
+//Bones questions
+const pSquare = [2 , 3 ,8 , 9 , 10];
+const checkPsquare = pSquare.some(elem => Math.sqrt(elem));
+console.log(checkPsquare);
+
+const letter = ['apple' , 'banana' , 'pizza'];
+const checkZ = letter.some(elem => elem.includes('z'));
+console.log(checkZ);
+
+const date = [
+  "2026-10-15", // Future date
+  "2026-11-01", // Future date
+  "2024-03-20", // Past date 1
+  "2026-12-25", // Future date
+  "2025-08-05"  // Past date 2
+];
+const todayC = new Date(); 
+const pastDataCheck = date.some(elem => new Date(elem) < todayC);
+console.log(pastDataCheck);
+
+const duplicate = [1 , 2 ,3 , 2 ,4];
+const checkDulpi = duplicate.some((elem , i) => duplicate.indexOf(elem)!== i);
+console.log(checkDulpi);
+
+const emails = [
+  "alex.smith@gmail.com",
+  "invalid.user.yahoo.com", // Missing @ symbol 1
+  "contact@company.org",
+  "user.nameatdomain.com",  // Missing @ symbol 2
+  "support@service.io"
+];
+const checkEmails = emails.some(elem => !elem.includes('@'));
+console.log("✅😊")
+console.log(checkEmails);
