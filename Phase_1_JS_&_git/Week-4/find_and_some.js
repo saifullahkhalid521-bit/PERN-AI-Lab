@@ -147,3 +147,48 @@ console.log(someArr);
 const numbsN = [3 , 7 ,11 ,2 ,8];
 const sNumbsN = numbsN.some(elem => elem < 0);
 console.log(sNumbsN);
+
+//level 2
+const usersEig = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 16 },
+  { name: "Charlie", age: 30 }
+];
+const someUser = usersEig.some(elem => elem.age < 18);
+console.log(someUser);
+
+const product = [
+  { name: "Book", inStock: true },
+  { name: "Pen", inStock: true },
+  { name: "Laptop", inStock: false }
+];
+const somePro = product.some(elem => !elem.inStock);
+console.log(somePro);
+
+const user = [
+  { name: "A", role: "admin", active: false },
+  { name: "B", role: "user", active: true },
+  { name: "C", role: "admin", active: true }
+];
+const someUsers = user.some(elem => elem.role === 'admin' && elem.active);
+console.log(someUser);
+
+//Level 3
+console.log("Level 3 😈");
+const fields = ['john' , 'doe' , "john@example.com" , ""];
+const fieldsVal = fields.some(elem => elem === "");
+console.log(fieldsVal);
+
+const cartS = [
+  {item: "T-shirt" , price: 25},
+  {item: "Shoes" , price: 80},
+  {item: "Laptop" , price: 1200},
+]
+const checkCart = cartS.some(elem => elem.price > 1000);
+console.log(checkCart);
+
+const userRoles = ["editor" , "viewer"];
+const neededRoles = ["admin" , "editor"];
+const permissionCheck = userRoles.some(elem => neededRoles.includes(elem));
+console.log(permissionCheck);
+
