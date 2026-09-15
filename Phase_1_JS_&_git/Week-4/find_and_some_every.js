@@ -379,4 +379,3 @@ const dateE = [
 const aaj = new Date();
 const dateEv = dateE.every(elem => new Date(elem) < aaj);
 console.log(dateEv);
-
