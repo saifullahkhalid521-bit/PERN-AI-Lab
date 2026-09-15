@@ -156,3 +156,44 @@ const sumNumsEven = numsEven.reduce((acc , n) => {
 }, 0);
 console.log(sumNumsEven);
 
+//Q15
+const a = [{id: 1 , x: 1}];
+const b = [{id: 2 , x: 2}];
+const ab = a.reduce((acc , n) => {
+ return acc.concat(a , b);
+},[]);
+console.log(ab);
+
+// console.log([1, 2, 3].reduce((a, b) => a + b));
+
+const filNre = [1 , 2 , 3 , 4 , 5];
+const filnreR = filNre.reduce((acc , en) => {
+  if(en % 2 === 0){
+    acc.push(en);
+  }
+  return acc;
+}, []);
+console.log(filnreR);
+
+const mapNre = [1 , 2 , 3];
+const mapNreR = mapNre.reduce((acc , n)=>{
+  acc.push(n*2);
+  // Array.push() array return nahi karta.
+// Woh nayi length return karta hai (number).
+  return acc;
+},[]);
+console.log(mapNreR);
+
+const sentence = "the cat and the dog and the bird";
+const lele = sentence.split(" ").reduce((acc , l)=>{
+  acc[l] = (acc[l] || 0)+1;
+  return acc;
+},{});
+console.log(lele);
+
+const arr = [[1 , 2] , [3 , 4] , [5 , [6 , 7]]];
+const deepSum = (arr) =>
+  arr.reduce((acc , item)=> {
+    return acc + (Array.isArray(item) ? deepSum(item) : item);
+  },0);
+  console.log(deepSum(arr));
