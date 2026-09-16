@@ -395,3 +395,32 @@ w4.sort((a , b)=>{
  return a.length - b.length || a.toLowerCase().localeCompare(b.toLowerCase);
 });
 console.log(w4);
+
+//Level --> 1
+console.log('Level -> 1 😊');
+const n6 = [40 ,100 , 1 ,5 , 25 ,10];
+n6.sort((a , b) => {
+  return a - b ;
+})
+console.log(n6);
+
+const n7 = [40 ,100 ,1 ,5 ,25 ,10];
+n7.sort((a ,b) => {
+  return b - a;
+})
+console.log(n7);
+
+const f = ["banana" , "apple" , "cherry" , "data"];
+const fsorted = [...f].sort();
+console.log(f);
+console.log(fsorted);
+
+const w5 = ["banana" , "apple" , "fig" , "kiwi" , "cherry"];
+const sortedw5 = [...w5].sort((a , b) => a.length - b.length);
+console.log(sortedw5)
+console.log(w5)
+
+const w6 = ["banana" , "apple" , "fig" , "kiwi" , "cherry"];
+const sortedw6 = [...w6].sort((a ,b) => b.length - a.length);
+console.log(w6)
+console.log(sortedw6)
