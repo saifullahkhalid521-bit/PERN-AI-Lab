@@ -464,3 +464,43 @@ const sortU7 = [...u7].sort((a ,b) => {
   return a.name.toLowerCase().localeCompare(b.name.toLowerCase()) || a.age - b.age;
 })
 console.log(sortU7);
+
+//Level -> 3
+console.log("Level -> 3 🤐");
+const emails = [
+  {subject: "A" , read: true},
+  {subject: "B" , read: false},
+  {subject: "C" , read: true},
+  {subject: "D" , read: false},
+]
+const sortEmail = [...emails].sort((a ,b) => {
+  return a.read - b.read;
+});
+console.log(sortEmail);
+
+const s1 = [
+  {name: "Sam" , score: 85},
+  {name: "Rita" , score: 92},
+  {name: "Tom" , score: 85},
+  {name: "Zara" , score: 92}
+]
+const sortS1 = [...s1].sort((a ,b) => {
+  // return a.name.toLowerCase().localeCompare(b.name.toLowerCase()) && b.score - a.score ;
+  return b.score - a.score || a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+});
+console.log(sortS1);
+
+const p2 = [
+  {name: 'A' , price: 50 , inStock: false},
+  {name: 'B' , price: 20 , inStock: true},
+  {name: 'C' , price: 10 , inStock: true},
+  {name: 'D' , price: 30 , inStock: false},
+];
+const sortP2 = [...p2].sort((a , b) => {
+  return b.inStock - a.inStock || a.price - b.price;
+})
+console.log(sortP2);
+
+const dates = ["2023-05-15", "2022-01-01", "2024-12-31", "2023-01-01"];
+const sortDate = [...dates].sort((a , b) => new Date(a) - new Date(b));
+console.log(sortDate);
