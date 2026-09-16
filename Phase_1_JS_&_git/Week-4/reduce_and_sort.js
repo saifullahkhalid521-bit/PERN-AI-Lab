@@ -424,3 +424,43 @@ const w6 = ["banana" , "apple" , "fig" , "kiwi" , "cherry"];
 const sortedw6 = [...w6].sort((a ,b) => b.length - a.length);
 console.log(w6)
 console.log(sortedw6)
+
+//Level -> 2 
+console.log('Level -> 2😎');
+
+const u4 = [
+  {name: "Charlie" , age: 30},
+  {name: "Alice" , age: 25},
+  {name: "Bob" , age: 35}
+];
+const sortedU4 = [...u4].sort((a ,b) => a.age - b.age);
+console.log(sortedU4);
+
+const p1 = [
+  {name: "Book" , price:15},
+  {name: "Laptop" , price:999},
+  {name: "Pen" , price:2},
+];
+const sortP1 = [...p1].sort((a ,b) => b.price - a.price);
+console.log(sortP1);
+
+const u6 = [
+  {name: "Charlie" , age:30},
+  {name: "alice" , age:25},
+  {name: "Bob" , age:35},
+];
+const sortU6 = [...u6].sort((a , b) => {
+  return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+})
+console.log(sortU6);
+
+const u7 = [
+  {name: "Alice" , age:30},
+  {name: "Bob" , age:25},
+  {name: "Alice" , age: 25},
+  {name: "Bob" , age:30}
+];
+const sortU7 = [...u7].sort((a ,b) => {
+  return a.name.toLowerCase().localeCompare(b.name.toLowerCase()) || a.age - b.age;
+})
+console.log(sortU7);
