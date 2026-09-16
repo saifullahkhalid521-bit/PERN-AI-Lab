@@ -267,3 +267,46 @@ const avS = av.reduce((acc , n)=>{
 },0)/av.length;
 console.log(avS);
 
+const usr = [
+  { name: "A", active: true },
+  { name: "B", active: false },
+  { name: "C", active: true },
+  { name: "D", active: true }
+];
+const usrS = usr.reduce((acc , n)=>{
+ return  acc = acc + (n.active?1:0);
+},0)
+console.log(usrS);
+
+const u2 = [
+  { id: 1, name: "Alice" },
+  { id: 2, name: "Bob" },
+  { id: 3, name: "Charlie" }
+];
+const u2s = u2.reduce((acc , n)=>{
+  if(!acc[n.id]){
+    acc[n.id] = n ;
+  }
+  return acc;
+},{});
+console.log(u2s);
+
+const a2 = [[1, 2], [3, 4], [5, 6]];
+const a2s = a2.reduce((acc , n)=>{
+ return acc.concat(n);
+ return acc;
+}, []);
+console.log(a2s);
+
+const n3 =  [1, 2, 3, 4, 5, 6];
+const n3s = n3.filter(elem => elem % 2 === 0).reduce((acc , n)=>{
+return acc = acc + n;
+},0)
+console.log(n3s);
+
+const a3 = [{ id: 1, x: 1 }];
+const b2 = [{ id: 2, x: 2 }];
+const combine = [a3 , b2].reduce((acc , n)=>{
+  return acc.concat(n);
+},[]);
+console.log(combine);
