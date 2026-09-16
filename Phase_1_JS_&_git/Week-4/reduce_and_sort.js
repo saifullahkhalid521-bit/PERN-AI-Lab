@@ -310,3 +310,40 @@ const combine = [a3 , b2].reduce((acc , n)=>{
   return acc.concat(n);
 },[]);
 console.log(combine);
+
+console.log([1, 2, 3].reduce((a, b) => a + b));
+console.log([1, 2, 3].reduce((a, b) => a + b, 10));
+console.log([].reduce((a, b) => a + b, 5));
+/*6    ← 1+2+3, no initial → starts at 1
+16   ← 10+1+2+3, initial = 10
+5    ← empty array with initial = 5*/
+
+
+const arr2 = ["a", "b", "c"];
+const result = arr2.reduce((acc, x, i) => acc + i, 0);
+console.log(result); // ?
+//3
+
+// Q19
+const n4 = [1 , 2 , 3 , 4 , 5];
+const n4r = n4.reduce((acc , n) => {
+if(n % 2 === 0){
+  acc.push(n);
+}
+return  acc; 
+}, []);
+console.log(n4r);
+
+const n5 = [1 ,2 , 3];
+const n5r = n5.reduce((acc , n)=> {
+ acc.push(n * 2);
+return acc ;
+},[]);
+console.log(n5r);
+
+const senN = "the cat and the dog and the bird";
+const senR = senN.split(" ").reduce((acc , n) => {
+  acc[n] = (acc[n] || 0)+1;
+  return acc;
+},{});
+console.log(senR);
