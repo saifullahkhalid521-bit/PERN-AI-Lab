@@ -197,3 +197,73 @@ const deepSum = (arr) =>
     return acc + (Array.isArray(item) ? deepSum(item) : item);
   },0);
   console.log(deepSum(arr));
+
+  
+//practice 
+const n1 = [5, 12, 8, 20, 3];
+const n1S = n1.reduce((acc , n)=>{
+  return acc<n?n:acc;
+},n1[0]);
+console.log(n1S);
+
+const n2 = [5, 12, 8, 20, 3];
+const n2S = n2.reduce((acc , n)=>{
+  return acc > n ? n : acc;
+},n2[0]);
+console.log(n2S);
+
+const w1 = ["Hello", "World", "from", "JS"];
+const w1S = w1.reduce((acc , w)=>{
+  return acc +" " + w;
+});
+console.log(w1S);
+
+const c1 = [
+  { item: "Book", price: 15 },
+  { item: "Pen", price: 2 },
+  { item: "Laptop", price: 999 }
+];
+const c1s = c1.reduce((acc , s)=>{
+  acc = acc + s.price ;
+  return acc;
+},0)
+console.log(c1s);
+
+const l1 = ["a", "b", "a", "c", "b", "a"];
+const l1s = l1.reduce((acc , l)=>{
+   acc[l] = (acc[l] || 0)+1;
+   return acc
+},{});
+console.log(l1s);
+
+const u = [
+  { name: "Alice", score: 80 },
+  { name: "Bob", score: 95 },
+  { name: "Charlie", score: 88 }
+];
+const uS = u.reduce((acc , hs)=>{
+ return acc.score < hs.score ? hs : acc ;
+}, u[0]);
+console.log(uS);
+
+const r = [
+  { name: "A", role: "admin" },
+  { name: "B", role: "user" },
+  { name: "C", role: "admin" },
+  { name: "D", role: "user" }
+];
+const rS = r.reduce((acc , g)=>{
+  if(!acc[g.role]){
+    acc[g.role] = [];
+  }
+  acc[g.role].push(g.name);
+  return acc ;
+},{});
+console.log(rS);
+
+const av = [10, 20, 30, 40, 50];
+const avS = av.reduce((acc , n)=>{
+ return  acc = acc + n;
+},0)/av.length;
+console.log(avS);
+
