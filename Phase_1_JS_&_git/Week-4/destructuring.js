@@ -90,3 +90,34 @@ let b = 2;
 [a ,b] = [b ,a]
 console.log(a ,b);
 
+//Level -> 2
+console.log('level -> 2🤔');
+
+const user6 = {
+  name6 : "Alice" ,
+  age6: 25
+};
+const {name6 : userName6 , age6} = user6;
+console.log(userName6 , age6);
+
+const user7 = {
+  name7: "Robot",
+  address: {city: "NYC" , zipX: "10001"},
+};
+const {name7 , address: {city , zipX}} = user7;
+console.log(city ,zipX);
+
+const nums1 = [1 , 2 , 3 , 4 , 5];
+const [first1 , ...rest1] = nums1;
+console.log(first);
+console.log(...rest1);
+
+const user8 = { name: "Alice" ,age: 25};
+function introduce({name ,age}) {
+  return `${name} is ${age}`;
+};
+console.log(introduce(user8));
+
+const user9 = { name9: "Alice" , age9: 25 , city9: "NYC" , role9: "admin"};
+const {name9 , ...rest9r } = user9;
+console.log(rest);
