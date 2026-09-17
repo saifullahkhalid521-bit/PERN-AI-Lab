@@ -609,3 +609,45 @@ const sortStudentGrades = [...studentGrades].sort((a, b) => {
   return gradeRank[a.grade] - gradeRank[b.grade];
 });
 console.log(sortStudentGrades);
+
+const products = [
+  { name: "Wireless Earbuds", rating: 4.5, reviews: 1200 },
+  { name: "Gaming Mouse", rating: 4.8, reviews: 850 },
+  { name: "Mechanical Keyboard", rating: 4.5, reviews: 3400 },
+  { name: "USB-C Hub", rating: 4.2, reviews: 500 },
+  { name: "4K Monitor", rating: 4.8, reviews: 2100 }
+];
+const sortProducts = [...products].sort((a , b) => {
+  return b.rating - a.rating || b.reviews - a.reviews
+})
+console.log(sortProducts);
+
+const w8 = ["rhythm", "beautiful", "cat", "queue", "apple", "synergy", "education"];
+const countVowels = (str) => (str.match(/[aeiou]/gi) || []).length;
+const sortW8 = [...w8].sort((a , b) => {
+  return countVowels(a) - countVowels(b);
+})
+console.log(sortW8);
+
+const u8 = [
+  { id: 101, name: "Alice", address: { city: "Tokyo", zip: "100-0001" } },
+  { id: 102, name: "Bob", address: { city: "Amsterdam", zip: "1012" } },
+  { id: 103, name: "Charlie", address: { city: "New York", zip: "10001" } },
+  { id: 104, name: "David", address: { city: "Berlin", zip: "10115" } }
+];
+const sortU8 = [...u8].sort((a , b)=>{
+  return a.address.city.toLowerCase().localeCompare(b.address.city.toLowerCase());
+})
+console.log(sortU8);
+
+const items = [
+  { name: "Item A", category: "Electronics", originalIndex: 0 },
+  { name: "Item B", category: "Books",       originalIndex: 1 },
+  { name: "Item C", category: "Electronics", originalIndex: 2 },
+  { name: "Item D", category: "Books",       originalIndex: 3 },
+  { name: "Item E", category: "Electronics", originalIndex: 4 }
+];
+const sortItems = [...items].sort((a , b)=> {
+  return a.category.toLowerCase().localeCompare(b.category.toLowerCase()) || a.originalIndex - b.originalIndex;
+})
+console.log(sortItems);
