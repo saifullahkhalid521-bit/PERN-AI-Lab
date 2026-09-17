@@ -551,3 +551,61 @@ while (sortN11.length){
   }
 }
 console.log(result4);
+
+// Bonus -> questions 
+console.log('Bonus questions 🫠');
+const posts = [
+  { id: 1, title: "First Post", createdAt: "2026-03-15T10:30:00Z" },
+  { id: 2, title: "Second Post", createdAt: "2026-09-01T14:20:00Z" },
+  { id: 3, title: "Third Post", createdAt: "2026-01-10T08:15:00Z" },
+  { id: 4, title: "Fourth Post", createdAt: "2026-06-22T19:45:00Z" }
+];
+const sortPosts = [...posts].sort((a , b) => {
+  return new Date(b.createdAt) - new Date(a.createdAt);
+})
+console.log(sortPosts);
+
+const countries = [
+  { name: "Brazil", population: 216422446 },
+  { name: "India", population: 1428627663 },
+  { name: "Japan", population: 123294513 },
+  { name: "United States", population: 339996563 },
+  { name: "Nigeria", population: 223804632 }
+];
+const sortCountries = [...countries].sort((a , b) => {
+  return b.population - a.population;
+})
+console.log(sortCountries);
+
+const playlist = [
+  { title: "Blinding Lights", artist: "The Weeknd" },
+  { title: "Shape of You", artist: "Ed Sheeran" },
+  { title: "Starboy", artist: "The Weeknd" },
+  { title: "Perfect", artist: "Ed Sheeran" },
+  { title: "Bad Habits", artist: "Ed Sheeran" }
+];
+const sortPlaylist = [...playlist].sort((a , b) => {
+  return a.artist.toLowerCase().localeCompare(b.artist.toLowerCase()) || a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+})
+console.log(sortPlaylist);
+
+const studentGrades = [
+  { student: "Alice", grade: "B" },
+  { student: "Bob", grade: "A+" },
+  { student: "Charlie", grade: "B+" },
+  { student: "David", grade: "A" },
+  { student: "Eve", grade: "F" }
+];
+// 1. Define rank order (lower number = higher rank)
+const gradeRank = {
+  "A+": 1,
+  "A": 2,
+  "B+": 3,
+  "B": 4,
+  "F": 5
+};
+// 2. Compare numeric values instead of strings
+const sortStudentGrades = [...studentGrades].sort((a, b) => {
+  return gradeRank[a.grade] - gradeRank[b.grade];
+});
+console.log(sortStudentGrades);
