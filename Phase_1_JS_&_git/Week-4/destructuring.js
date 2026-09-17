@@ -1,5 +1,26 @@
 
 
+const nums = [10 , 20 ,30];
+const [a1 , b1 ,c]  = nums;
+console.log(a1 , b1 , c);
+
+const [a2 = 1 ,b2 = 2 , c3 = 3] = [10];
+console.log(a2 , b2 , c3);
+
+let aX = 1;
+let bX = 2;
+[aX , bX] = [bX , aX];
+console.log(aX , bX);
+
+const [first , ...restF] = [1 ,2 ,3 ,4 ,5];
+console.log(first);
+console.log(...restF);
+
+function getCoords() {
+  return [10 ,20];
+}
+const [xF , yF] = getCoords();
+console.log(xF , yF);
 
 //_________________________________________________________________________________________________________________________________________
 console.log('Hello destructuring🤤');
