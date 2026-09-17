@@ -121,3 +121,29 @@ console.log(introduce(user8));
 const user9 = { name9: "Alice" , age9: 25 , city9: "NYC" , role9: "admin"};
 const {name9 , ...rest9r } = user9;
 console.log(rest);
+
+//Level -> 3
+console.log('Levle -> 3🥺');
+function getMinMax(nums) {
+  return [Math.min(...nums) , Math.max(...nums)];
+}
+const [min , max] = getMinMax([3 , 1 , 4 ,5 ,2]);
+console.log(min , max);
+
+const state = ["active" , () => console.log("setter")];
+const [status , setStatus] = state;
+console.log(status , setStatus);
+
+function greet ( {name = "Guest" , city ="Nowhere" } = {}){
+  return `Hello ${name} from ${city}`;
+}
+console.log(greet());
+console.log(greet({name: "Alice"}));
+
+const response = { statusCode: 200, data: { name: "Alice" } };
+
+function handleResponse({ statusCode: code, data }) {
+  return `${code}: ${data.name}`;
+}
+console.log(handleResponse(response));
+
