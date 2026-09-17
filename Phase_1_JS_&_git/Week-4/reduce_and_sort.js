@@ -504,3 +504,50 @@ console.log(sortP2);
 const dates = ["2023-05-15", "2022-01-01", "2024-12-31", "2023-01-01"];
 const sortDate = [...dates].sort((a , b) => new Date(a) - new Date(b));
 console.log(sortDate);
+
+//Level -> 4
+console.log("Level -> 4 😈");
+
+const n8 = [10 ,1 ,5 ,100 ,25];
+n8.sort();
+console.log(n8);
+
+const arr3 = [3 , 1 , 2];
+const result2 = arr3.sort();
+console.log(arr3);
+console.log(result2);
+console.log(arr3 === result2);
+
+const w7 = ["banana" , "Apple" , "cherry" , "Date" , "avocado"];
+const sortw7 = [...w7].sort((a , b) => {
+  return a.toLowerCase().localeCompare(b.toLowerCase());
+}); 
+console.log(sortw7);
+
+const n9 = ['10' , '2' , '30' , '1' , '5'];
+const sortN9 = [...n9].sort((a , b) => {
+  return Number(a) - Number(b);
+});
+console.log(sortN9);
+
+const n10 = [5, 12, 8, 130, 44, 3, 20];
+
+const result3 = n10
+  .filter(n => n > 10)
+  .sort((a, b) => a - b);
+
+console.log(result3);
+console.log(n10);
+
+const n11 = [1 , 2 , 3 , 4 , 5 , 6];
+const sortN11 = [...n11].sort((a , b) => {
+  return a - b; 
+});
+const result4 = [];
+while (sortN11.length){
+  result4.push(sortN11.pop()); // largest
+  if (sortN11.length){
+    result4.push(sortN11.shift()); // smallest
+  }
+}
+console.log(result4);
