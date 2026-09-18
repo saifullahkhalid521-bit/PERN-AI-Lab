@@ -223,3 +223,31 @@ function handleResponse2({statusCode2 : Code , data}){
   return `${Code}: ${data.nameRE2}`;
 }
 console.log(handleResponse2(response2));
+
+
+console.log('Bonus -> Questions 😒');
+
+const stateTuple = [42, (newValue) => console.log("New value:", newValue)];
+const [value1 , setValue1] = stateTuple;
+console.log(value1 , setValue1);
+
+const book = {
+  title: "The Pragmatic Programmer",
+  author: "Andrew Hunt & David Thomas"
+  // year property is intentionally missing
+};
+const {title , author , year = 2023} = book;
+console.log(title , author , year);
+
+const apiResponse = {
+  status1: 200,
+  data: {
+    users: [
+      { id: 1, nameuSr: "Alice" },
+      { id: 2, nameuSr2: "Bob" }
+    ]
+  }
+};
+const {status1 , data , data: {users : [x1 , y1]}} = apiResponse
+console.log(status1 , data);
+console.log(x1 , y1);
