@@ -251,3 +251,29 @@ const apiResponse = {
 const {status1 , data , data: {users : [x1 , y1]}} = apiResponse
 console.log(status1 , data);
 console.log(x1 , y1);
+
+const currentDate = new Date("2026-09-18T10:30:00");
+const [ day , month , year1] = [
+  currentDate.getDate(),
+  currentDate.getMonth() + 1,
+  currentDate.getFullYear(),
+]
+console.log(day , month , year1);
+
+function printUsers({name = "Saifullah" , email = "saif123@example.com" , phone = "1234567890"} = {}){
+  return `${name} , your email is ${email} and you no. is ${phone}`;
+}
+console.log(printUsers({name : "Robot"}));
+console.log(printUsers({name : "Ego" , email: "fyourself@self.com"}));
+
+const boy = { id: 1, name: "A", age: 20 };
+const {id , ...brest} = boy;
+console.log(id);
+console.log({...brest});
+
+const apiResponse1 = {
+  status3: 200
+  // profile key is missing entirely
+};
+const {status3 , useing: {code = 12 , names = 'ego'} = {} } = apiResponse1;
+console.log(code , names);
