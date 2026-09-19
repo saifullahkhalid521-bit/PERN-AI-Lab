@@ -68,6 +68,54 @@ const mid = [...arr1.slice(0 , 1) , 99 , ...arr1.slice(1)];
 console.log(mid);
 const mid2 = [...arr1.slice(0 , 3) , 100 , ...arr1.slice(3)];
 console.log(mid2);
+
 // const Obj = {name: 'saif' , roll: 'dev' , city: "Ranchi"};
 // const Objsp = {...Obj};
 // console.log(Objsp);
+
+const user2 = { name: "Alice", address: { city: "NYC" } };
+const copy2 = { ...user2 };
+
+copy2.address.city = "LA";
+console.log(user2.address.city); 
+// For deep copies, use structuredClone() (modern) or a library.
+
+const a3 = [1 , 2 ];
+const b3 = null;
+const result = [...a3 , ...(b3 || [])];
+console.log([...a3 , ...[]]);
+// [...null]
+
+const obj = { a: 1, b: 2 };
+// [...obj]  ❌ TypeError — object is not iterable
+// But this works (extracts values):
+Object.values(obj); // [1, 2]
+// Or keys:
+[...Object.keys(obj)]; // ["a", "b"]
+
+//Level -> 1
+console.log('Level -> one😟');
+const a4 = [1, 2 , 3];
+const b4 = [...a4];
+b4.push(4);
+console.log(a4)
+console.log(b4);
+
+const a5 = [1 , 2];
+const b5 = [3 , 4];
+const merge = [...a5 , ...b5];
+console.log(merge);
+
+const nums3 = [5 , 2 , 9 , 1 , 7];
+console.log(Math.max(...nums3));
+
+const user3 = {name: "Khalid" , age:23};
+const user3Copy = {...user3};
+user3Copy['role'] = 'dev';
+console.log(user3Copy);
+console.log(user3);
+
+const a6 = {x:1 , y:2};
+const b6 = {y:3 , z:4};
+const merge1 = {...a6 , ...b6};
+console.log(merge1);
