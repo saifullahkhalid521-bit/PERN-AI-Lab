@@ -119,3 +119,29 @@ const a6 = {x:1 , y:2};
 const b6 = {y:3 , z:4};
 const merge1 = {...a6 , ...b6};
 console.log(merge1);
+
+
+//Level 2
+console.log("Level -> 2😖");
+
+const arr2 = [1 , 2 , 3];
+const arr2Copy = [...arr2.slice(0 , 3) , 4 , ...arr2.slice(3)];
+console.log(arr2Copy);
+
+const arr3 = [1 , 2 , 3];
+const arr3Copy = [ 0 ,...arr3 ];
+console.log(arr3Copy);
+
+const user4 = {name: "Robot" , age:25 ,city: "Ranchi"};
+const user4Copy = {...user4 , age : 30};
+console.log(user4);
+console.log(user4Copy);
+
+const word1 = "hello";
+const word1Copy  = [...word1];
+console.log(word1Copy);
+
+const a7 = [1 , 2];
+const b7 = [5 , 6];
+const mrga7b7 = [...a7 , 3, 4 , ...b7];
+console.log(mrga7b7);
