@@ -212,3 +212,58 @@ function add(a , b , c){
 }
 const nums5 = [1 , 2 , 3];
 console.log(add(...nums5));
+
+//Bonus 
+console.log('Bonus -> 😈');
+
+const fruits = ["Apple", "Banana"];
+const vegetables = ["Carrot", "Spinach"];
+const grains = ["Rice", "Oats"];
+const meg3 = [...fruits , ...vegetables , ...grains];
+console.log(meg3);
+
+const userProfile = {
+  id: 101,
+  info: {
+    name: "Alex",
+    preferences: {
+      theme: "dark",
+      notifications: true
+    }}};
+const userProfileDeepCopy = structuredClone(userProfile);
+userProfileDeepCopy.info.preferences.theme = 'Light';
+console.log(userProfileDeepCopy);
+
+const defaultConfig = {
+  theme: "light",
+  fontSize: 14,
+  showSidebar: true,
+  language: "en"
+};
+const userSettings = {
+  theme: "dark",
+  fontSize: 18
+  // showSidebar and language are omitted
+};
+const combDefaulUser = {...defaultConfig , ...userSettings};
+console.log(combDefaulUser);
+
+const arr2D = [[1 , 2], [3 , 4]];
+const flettened = arr2D.reduce((acc , elem) => {
+  return [...acc , ...elem]
+},[]);
+console.log(flettened);
+
+const users = [
+  { id: 1, name: "Alice" },
+  { id: 2, name: "Bob" },
+  { id: 1, name: "Alice (Duplicate)" },
+  { id: 3, name: "Charlie" },
+  { id: 2, name: "Bob (Duplicate)" }
+];
+// 1. Get unique IDs using Set + spread
+const uniqueIds = [...new Set(users.map(u => u.id))];
+// 2. Map each unique ID back to its first matching object
+const uniqueUsers = uniqueIds.map(id => users.find(u => u.id === id));
+console.log(uniqueUsers);
+// console.log(uniqueIds);
