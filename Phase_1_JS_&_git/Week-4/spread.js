@@ -173,3 +173,42 @@ console.log(mrgDefaWithUser);
 const word2 = "hello";
 const word2Copy = [...word2].reverse().join('');
 console.log(word2Copy);
+
+//Level -> 4
+console.log('Level -> 4🙃');
+
+const a8 = [1, 2];
+const b8 = a8;
+const c8 = [...a8];
+b8.push(3);
+c8.push(4);
+console.log(a8, b8, c8);
+
+const a9 = { x: 1 };
+const b9 = { ...a9, x: 2, y: 3 };
+console.log(a9, b9);
+
+const obj1 = { a: 1, b: 2 };
+// const arr = [...obj1];
+const arr4 = Object.values(obj1); // [1, 2]
+console.log(arr4);
+
+const user5 = { name: "Alice", address: { city: "NYC" } };
+const copy4 = { ...user5 };
+// const deepCopy = structuredClone(user5); // or JSON.parse(JSON.stringify(user))
+copy4.address.city = "LA";
+console.log(user5.address.city);
+
+const a10 = [1, 2, 3];
+const b10 = [0, ...a, 4];
+console.log(b10.length);
+console.log(b10);
+
+const c10 = [...a10, ...a10];
+console.log(c10);
+
+function add(a , b , c){
+  return a+b+c;
+}
+const nums5 = [1 , 2 , 3];
+console.log(add(...nums5));
