@@ -145,3 +145,31 @@ const a7 = [1 , 2];
 const b7 = [5 , 6];
 const mrga7b7 = [...a7 , 3, 4 , ...b7];
 console.log(mrga7b7);
+
+//Level -> 3
+console.log('Level -> 3🤨');
+const nums4 = [1 , 2 , 2 , 3 , 3 , 4];
+const nums4Copy = [...new Set(nums4)];
+console.log(nums4Copy); 
+
+const todos = ['buy milk' , 'walk dog'];
+const todosCopy = [...todos , 'read book'];
+console.log(todosCopy);
+console.log(todos);
+
+const state1 = {
+  user: {name: "Alice"},
+  theme: "light"
+};
+const stateUpdate = {...state1};
+stateUpdate.theme = 'dark';
+console.log(stateUpdate);
+
+const defaults = {theme: "light" , font: '16px' , notifications: true};
+const userPrefs = {theme: "dark" , notifications:false};
+const mrgDefaWithUser  = {...defaults , ...userPrefs};
+console.log(mrgDefaWithUser);
+
+const word2 = "hello";
+const word2Copy = [...word2].reverse().join('');
+console.log(word2Copy);
