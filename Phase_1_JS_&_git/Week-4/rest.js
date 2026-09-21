@@ -109,3 +109,12 @@ function maxOf(...rest){
   return Math.max(...rest);
 }
 console.log(maxOf(3 ,8 , 1 , 9 , 4));
+
+const arr = ['a' , 'b' , 'c' , 'd'];
+const [ , ...rest4] = arr;
+console.log( rest4);
+
+const fullName = "John Ronald Reuel Tolkien";
+const spFname = fullName.split(' ');
+const [fName , ...restName] = spFname;
+console.log(restName);
