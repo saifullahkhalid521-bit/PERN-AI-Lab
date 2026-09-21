@@ -140,3 +140,22 @@ function pick(obj , ...rest){
 }
 const user3 = { name: "Alice", age: 25, city: "NYC", role: "admin" };
 console.log(pick(user3, "name", "city"));
+
+const user4 = {name: "RIO" , age:25 , city: "NYC" , role: 'admin'};
+
+function omit(obj , ...keys){
+  const result = { ...obj};
+  for (const key  of keys) {
+    delete result[key];
+  }   
+  return result;
+}
+console.log(omit(user4 , 'role' , 'age'));
+
+function Button({ variant, ...rest }) {
+  return { className: `btn-${variant}`, ...rest };
+}
+function Button({ variant, ...rest }) {
+  return { className: `btn-${variant}`, ...rest };
+}
+console.log(Button({ variant: "primary", onClick: "fn", disabled: true }));
