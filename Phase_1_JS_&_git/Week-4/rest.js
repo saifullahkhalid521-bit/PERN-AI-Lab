@@ -49,8 +49,35 @@ function hobbies(name , ...hobbie) {
 }
 console.log(hobbies("Robot" , "Boxing" , "Coding" , "Hacking"));
 
-
 function findMin(...numbersR){
   console.log(Math.min(...numbersR));
 }
 findMin(45 , 12 , 89 ,3 ,27);
+
+
+//Level -> 1
+console.log('Level -> 1😊');
+
+function collect(...rest){
+  return rest;
+}
+console.log(collect(1 , 2 , 3 , 4 , 5));
+
+const nums1 = [1 , 2 , 3 , 4 , 5];
+const [first1 , ...rest1] = nums1;
+console.log(first1 , rest1);
+
+const nums2 = [1 , 2 , 3 , 4 , 5];
+const [one , two , ...rest2] = nums2;
+console.log(one , two , rest2);
+
+const user = {name1: "Saifullah" , age: 22 , city: "Ranchi"};
+const {name1 , ...restD} = user;
+console.log(restD);
+
+function add(...rest){
+ return rest.reduce((acc , n)=>{
+    return acc + n;
+  },0);
+}
+console.log(add(1 , 2 , 3 , 4 , 5));

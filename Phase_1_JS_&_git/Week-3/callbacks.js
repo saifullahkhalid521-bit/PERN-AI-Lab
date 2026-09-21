@@ -1,3 +1,4 @@
+
 function greet(name , callback){
   console.log(`Hello, ${name}`);
   callback();
@@ -381,4 +382,13 @@ errCall1(1 , (error , data)=>{
   }else{
     console.log("The value is: " ,  data);
   }
+});
+
+function test( user , callback){
+  setTimeout(()=>{
+    console.log(`${callback} ${user}`);
+  },3000);
+}
+test('Khalid',()=>{
+  return `Hello 😎`;
 });

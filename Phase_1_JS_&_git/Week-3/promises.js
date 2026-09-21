@@ -445,3 +445,21 @@ async function getDataOfUser() {
   }
 }
 getDataOfUser();
+
+const test1 = new Promise ((resolve , reject) =>{
+  const err = false;
+  setTimeout(()=>{
+    if(!err){
+      resolve("Task is done!🫡");
+    }
+    else{
+      reject('Someting went wrong😈');
+    }
+  },3000);
+})
+test1.then((response)=>{
+  console.log(response);
+})
+.catch((err)=>{
+  console.log(err);
+})
