@@ -81,3 +81,31 @@ function add(...rest){
   },0);
 }
 console.log(add(1 , 2 , 3 , 4 , 5));
+
+
+//level -> 2
+console.log('Level -> 2🫡');
+
+function greeting(greet , ...rest){
+  return `${greet} , ${rest.join(', ')}`
+}
+console.log(greeting('Hello' , 'Saif' , 'Khalid' , 'Robot'));
+
+
+const user2 = {name2 : "Ego" , password1: "egoset@1234" , email1:"ego.com"};
+const {password1 , ...rest3} = user2;
+console.log(rest3);
+
+function maxOf(...rest){
+  // return rest.reduce((acc ,n)=> {
+  //   if(acc > n){
+  //     acc = acc;
+  //   }
+  //   else{
+  //     acc = n;
+  //   }
+  //   return acc;
+  // },rest[0])
+  return Math.max(...rest);
+}
+console.log(maxOf(3 ,8 , 1 , 9 , 4));
