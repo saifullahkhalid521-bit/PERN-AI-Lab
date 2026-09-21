@@ -277,3 +277,7 @@ const apiResponse1 = {
 };
 const {status3 , useing: {code = 12 , names = 'ego'} = {} } = apiResponse1;
 console.log(code , names);
+
+const numsA = [1 , 2 , 3 , 4 , 5];
+const [one1 , two2 , ...restA] = numsA;
+console.log(one1 ,two2 , restA);

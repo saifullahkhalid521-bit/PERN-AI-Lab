@@ -198,3 +198,10 @@ console.log(result);
 function lol (n) {
   return n > 10;
 }
+
+const day1 = [1 , 2 , 3 , 4 , 5];
+const Mday1 = day1.map(elem => elem*2);
+console.log(Mday1);
+
+const filDay1 = day1.filter(elem => elem % 2 === 0);
+console.log(filDay1);

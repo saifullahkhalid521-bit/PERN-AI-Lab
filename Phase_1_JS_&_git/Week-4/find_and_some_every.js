@@ -379,3 +379,13 @@ const dateE = [
 const aaj = new Date();
 const dateEv = dateE.every(elem => new Date(elem) < aaj);
 console.log(dateEv);
+
+const maiArr = [1 , 2 , 3 , 4 , 5 , 6];
+const fnMaiArr = maiArr.find(elem => elem > 2 && elem % 2 === 0);
+console.log(fnMaiArr);
+
+const SmMaiArr = maiArr.some(elem => (elem < 10 && elem > 3) && (elem % 3 === 0 && elem % 2 === 0));
+console.log(SmMaiArr);
+
+const evMaiArr = maiArr.every(elem => elem > 0 && elem < 5) ;
+console.log(evMaiArr);

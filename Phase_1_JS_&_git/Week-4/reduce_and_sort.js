@@ -651,3 +651,15 @@ const sortItems = [...items].sort((a , b)=> {
   return a.category.toLowerCase().localeCompare(b.category.toLowerCase()) || a.originalIndex - b.originalIndex;
 })
 console.log(sortItems);
+
+const aajkaArr = [1 , 2 , 3 , 4 , 5];
+const reAajKaArr = aajkaArr.reduce((acc , n)=>{
+ return acc = acc + n;
+},0);
+console.log(reAajKaArr);
+
+const shAajKaArr = [...aajkaArr];
+shAajKaArr.sort((a , b)=>{
+  return b - a;
+});
+console.log(shAajKaArr);
