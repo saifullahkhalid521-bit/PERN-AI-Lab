@@ -159,3 +159,34 @@ function Button({ variant, ...rest }) {
   return { className: `btn-${variant}`, ...rest };
 }
 console.log(Button({ variant: "primary", onClick: "fn", disabled: true }));
+
+//level -> 4
+console.log("Level -> 4 🤨");
+
+function test(a, ...rest) {
+  console.log(a);
+  console.log(rest);
+}
+test(1);
+test(1, 2, 3);
+
+// function test(...rest, last) {
+//   console.log(rest, last);
+// } rest is in front , that's wrong
+
+const obj = { a: 1, b: 2, c: 3 };
+const { a, ...rest } = obj;
+const { b, ...rest02 } = obj;
+console.log(rest, rest02);
+
+function f(...args) {
+  return args.length;
+}
+console.log(f());
+console.log(f(1));
+console.log(f(1, 2, 3));
+
+function clone(...args){
+  return [...args];
+}
+console.log(clone(1 , 2 , 3));
