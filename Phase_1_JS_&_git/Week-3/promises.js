@@ -463,3 +463,18 @@ test1.then((response)=>{
 .catch((err)=>{
   console.log(err);
 })
+
+const usr1 = fetch('https://api.github.com/users/octocat')
+.then(response => response.json());
+const usr2 = fetch('https://api.github.com/users/gaearon')
+.then(response => response.json());
+const usr3 = fetch('https://api.github.com/users/sindresorhus')
+.then(response => response.json());
+
+Promise.all([usr1 , usr2 , usr3])
+.then(response => {
+  console.log(response[0].name + '🤏');
+  console.log(response[1].name + '🤏');
+  console.log(response[2].name + '🤏');
+})
+.catch((err) => err);
