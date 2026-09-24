@@ -228,3 +228,15 @@ async function fetcHeKrDe() {
     }
 }
 fetcHeKrDe();
+
+async function namelo(){
+  try{
+    const response = await fetch('https://api.github.com/users/sindresorhus').then(res => res.json());
+
+    console.log(response.name + '👽');
+
+  }catch(err){
+    console.log(err);
+  }
+}
+namelo();
