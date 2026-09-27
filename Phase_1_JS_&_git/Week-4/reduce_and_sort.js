@@ -705,3 +705,35 @@ console.log(expensesR.reduce((acc , elem) => {
   }
   return acc;
 },{}));
+
+//sort
+
+const numsT = [45 , 12 , 89 , 3 , 27];
+const numsTsh = [...numsT];
+console.log(numsTsh.sort((a , b) => a-b));
+
+const scoresT = [72 , 95 , 61 , 88 , 45];
+const scoresTsh = [...scoresT];
+console.log(scoresTsh.sort((a ,b)=> b-a));
+
+const namesT = ["zain", "Ali", "saif", "Bilal", "ahmed"];
+const namesTsh = [...namesT];
+console.log(namesTsh.sort((a, b) => a.toLowerCase().localeCompare( b.toLowerCase())));
+
+const productsT = [
+  { name: "Mouse", price: 800 },
+  { name: "Laptop", price: 60000 },
+  { name: "USB", price: 300 },
+  { name: "Keyboard", price: 1500 }
+];
+const productsTsh = [...productsT];
+console.log(productsTsh.sort((a , b) => a.price - b.price));
+
+const studentsT = [
+  { name: "Saif", marks: 78 },
+  { name: "Robot", marks: 92 },
+  { name: "Ego", marks: 85 },
+  { name: "Alex", marks: 92 }
+];
+const studentsTsh = [...studentsT];
+console.log(studentsTsh.sort((a , b) => a.marks - b.marks || a.name.toLowerCase().localeCompare(b.name.toLowerCase())));
