@@ -59,8 +59,6 @@ console.log(finduserE ? finduserE.name : "User not fond");
 
 const cart = [
   { item: "T-shirt", price: 25 },
-  { item: "Shoes", price: 80 },
-  { item: "Phone", price: 600 },
   { item: "Laptop", price: 1200 }
 ];
 const findProd = cart.find(elem => elem.price > 100);
@@ -181,8 +179,6 @@ console.log(fieldsVal);
 
 const cartS = [
   {item: "T-shirt" , price: 25},
-  {item: "Shoes" , price: 80},
-  {item: "Laptop" , price: 1200},
 ]
 const checkCart = cartS.some(elem => elem.price > 1000);
 console.log(checkCart);
@@ -294,8 +290,6 @@ console.log(fieldsEv);
 
 const cartE = [
   {item: "T-shirt" , price: 25},
-  {item: "Shoes" , price: 80},
-  {item: "Laptop" , price: 1200}
 ]
 const cartEv = cartE.every(elem => elem.price < 1000);
 console.log(cartEv);
@@ -389,3 +383,88 @@ console.log(SmMaiArr);
 
 const evMaiArr = maiArr.every(elem => elem > 0 && elem < 5) ;
 console.log(evMaiArr);
+
+//Find
+const numsF1 = [5 ,12 , 18 , 25 ,30];
+console.log(numsF1.find(elem => elem > 20));
+
+const fruitsF = ["apple" , "banana" , "mango" , "orange"];
+console.log(fruitsF.find(elem => elem.length > 5));
+
+const usersF = [
+  {name :"Saif" , age: 22},
+  {name :"Robot" , age: 17},
+  {name :"Ego" , age: 25},
+]
+console.log(usersF.find(elem => elem.age > 18));
+
+const productsF =[
+  {name : "Mouse" , Price: 800},
+  {name : "Keyboard" , Price: 1500},
+  {name : "Monitor" , Price: 12000},
+  {name : "Laptop" , Price: 60000},
+]
+console.log(productsF.find(elem => elem.Price > 10000));
+
+const studentsF = [
+  {name : "Saif" , marks: {maths: 85 , physics: 72} },
+  {name : "Robot" , marks: {maths: 65 , physics: 91} },
+  {name : "Ego" , marks: {maths: 92 , physics: 88} },
+]
+
+// Some
+const numsS = [4 ,7 , 11 , 15];
+console.log(numsS.some(elem => elem > 10));
+
+const fruitsS = ["apple" , "banana" , "mango" , "kiwi"];
+console.log(fruitsS.some(elem => elem === "mango"));
+
+const usersS = [
+  {name: "Saif" , age: 22},
+  {name: "Robot" , age: 17},
+  {name: "Ego" , age: 16},
+]
+console.log(usersS.some(elem => elem.age > 18));
+
+const productsS = [
+  {name: "Mouse" , price: 800},
+  {name: "Keyboard" , price: 1500},
+  {name: "Monitor" , price: 12000},
+]
+console.log(productsS.some(elem => elem.price > 10000));
+
+const studentsS = [
+  {name: "Saif" , marks: {maths: 75 , physics: 85}},
+  {name: "Robot" , marks: {maths: 65 , physics: 91}},
+  {name: "Ego" , marks: {maths: 92 , physics: 88}},
+]
+console.log(studentsS.some(elem => elem.marks.maths > 90 && elem.marks.physics > 85));
+
+//every
+console.log("Every")
+const numsE1 = [2 , 4 , 6 , 8 , 10];
+console.log(numsE1.every(elem => elem % 2 === 0));
+
+const agesE = [20 , 25 , 31 , 18 , 22];
+console.log(agesE.every(elem => elem >= 18));
+
+const usersE1 = [
+  {name: "Saif" , age:22},
+  {name: "Robot" , age:25},
+  {name: "Ego" , age:19},
+]
+console.log(usersE1.every(elem => elem.age >= 18));
+
+const productsE1 = [
+  { name: "Mouse", price: 800 },
+  { name: "Keyboard", price: 1500 },
+  { name: "Monitor", price: 12000 }
+];
+console.log(productsE1.every(elem => elem.price > 500));
+
+const studentsE = [
+  { name: "Saif", marks: { maths: 85, physics: 82 } },
+  { name: "Robot", marks: { maths: 91, physics: 88 } },
+  { name: "Ego", marks: { maths: 95, physics: 90 } }
+];
+console.log(studentsE.every(elem => elem.marks.maths >= 80 && elem.marks.physics >= 80))
