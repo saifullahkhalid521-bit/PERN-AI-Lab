@@ -281,3 +281,54 @@ console.log(code , names);
 const numsA = [1 , 2 , 3 , 4 , 5];
 const [one1 , two2 , ...restA] = numsA;
 console.log(one1 ,two2 , restA);
+
+const obj = {
+  name3 : "Saif",
+  role : "Full stack dev",
+  age1 : "22"
+}
+const {name3 , role , age1} = obj;
+console.log(name3 , role , age1);
+
+const numsD =[10 , 20 , 30 , 40 ];
+const [firstD , , , lastD] = numsD;
+console.log(firstD , lastD);
+
+const userD = {
+  nameD : "Saif",
+  ageD:22,
+  cityD: "Ranchi"
+};
+const {nameD , cityD} = userD;
+console.log(nameD , cityD);
+
+const productD = {
+  nameP: "Laptop",
+  PriceP: 60000,
+  brandP: "ASUS"
+};
+const {nameP , PriceP} = productD;
+console.log(nameP , PriceP);
+
+const studentD = {
+  nameS : "Robot",
+  marksS : {
+    mathsS: 85,
+    physicsS: 78
+  }
+};
+const {nameS , marksS : {mathsS}} = studentD;
+console.log(nameS , mathsS);
+
+const dataD = [
+  {
+    name1Ds : "Saif",
+    skills1 : ["JS" , "React"]
+  },
+  {
+    nameD2s : "Robot",
+    skills2 : ["PHP" , "MySQL"]
+  }
+];
+const [{name1Ds , skills1} , {skills2}]  = dataD;
+console.log({name1Ds} , {skills1} , skills2);
