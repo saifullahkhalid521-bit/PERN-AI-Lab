@@ -663,3 +663,45 @@ shAajKaArr.sort((a , b)=>{
   return b - a;
 });
 console.log(shAajKaArr);
+
+//reduce
+const numsR = [5, 10, 15, 20];
+console.log(numsR.reduce((acc , elem) => {
+  return acc + elem;
+},0));
+
+const pricesR = [100 ,250 ,75 , 400];
+console.log(pricesR.reduce((acc , elem) => acc + elem) - 50);
+
+const wordsR = ["JS" , "React" , "Node" , "CSS"];
+console.log(wordsR.reduce((acc , elem) => {
+  return acc +' - '+ elem;
+}));
+
+const cartR = [
+  { name: "Mouse", price: 800, qty: 2 },
+  { name: "Keyboard", price: 1500, qty: 1 },
+  { name: "USB", price: 300, qty: 3 }
+];
+console.log(cartR.reduce((acc , elem) => {
+  console.log(elem.price * elem.qty);
+  return acc + elem.price;
+}, 0));
+
+const expensesR = [
+  { category: "food", amount: 300 },
+  { category: "travel", amount: 500 },
+  { category: "food", amount: 200 },
+  { category: "shopping", amount: 800 },
+  { category: "travel", amount: 300 }
+];
+console.log(expensesR.reduce((acc , elem) => {
+
+  if(!acc[elem.category]){
+    acc[elem.category] = elem.amount;
+  }
+  else{
+    acc[elem.category] += elem.amount;
+  }
+  return acc;
+},{}));
