@@ -234,3 +234,36 @@ const totalPrice = produtsM.map(ele => {
   return {name: ele.name , total: ele.price * ele.qty}
 })
 console.log(totalPrice);
+
+// filter()
+const numsFlt = [3, 8 , 12 , 5 , 20 , 7];
+const great10 = numsFlt.filter(ele => ele > 10);
+console.log(great10);
+
+const wordsF = ["apple" , "cat" , "banana" , "dog" , "orange"];
+const lgrt4 = wordsF.filter(ele => ele.length > 4);
+console.log(lgrt4);
+
+const usersFlt = [
+  {name: "Saif" , age: 22 , active: true},
+  {name: "Robot" , age: 17 , active: false},
+  {name: "Ego" , age: 25 , active: true},
+  {name: "Khalid" , age: 16 , active: true},
+]
+console.log(usersFlt.filter(ele => ele.active === true));
+
+const productsFlt = [
+  {name : "Mouse" , price : 800 , sock : 10},
+  {name : "Keyboard" , price : 1500 , sock : 0},
+  {name : "Monitor" , price : 12000 , sock : 5},
+  {name : "USB" , price : 300 , sock : 20},
+]
+console.log(productsFlt.filter(ele => ele.price > 1000));
+
+const studentsFlt = [
+  {name: "Saif" , marks: {maths:85 , physics: 72}},
+  {name: "Robot" , marks: {maths:65 , physics: 91}},
+  {name: "Ego" , marks: {maths:92 , physics: 88}},
+  {name: "Khalid" , marks: {maths:78 , physics: 81}},
+]
+console.log(studentsFlt.filter(ele => ele.marks.maths >= 80 && ele.marks.physics >= 80));
