@@ -205,3 +205,32 @@ console.log(Mday1);
 
 const filDay1 = day1.filter(elem => elem % 2 === 0);
 console.log(filDay1);
+
+//Map()
+const namesM = ["Saif" , "Robot" , "Ego" , "Kahlid"];
+console.log(namesM.map(ele => ele.toUpperCase()));
+
+const numsM = [2 , 4 , 6 , 8 , 10];
+console.log(numsM.map(ele => ele * 2));
+
+const priceM = [100 , 250 , 500 , 800];
+const discounted = priceM.map(ele => ele - (ele / 10));
+console.log(discounted);
+
+const usersM = [
+  {name: "Saif" , age: 22},
+  {name: "Robot" , age: 25},
+  {name: "Ego" , age: 19},
+]
+const onlyName = usersM.map(ele => ele.name);
+console.log(onlyName);
+
+const produtsM = [
+  {name: "Mouse" , price: 800 , qty: 2},
+  {name: "Keyboard" , price: 1500 , qty: 1},
+  {name: "USB" , price: 300 , qty: 3},
+]
+const totalPrice = produtsM.map(ele => {
+  return {name: ele.name , total: ele.price * ele.qty}
+})
+console.log(totalPrice);
