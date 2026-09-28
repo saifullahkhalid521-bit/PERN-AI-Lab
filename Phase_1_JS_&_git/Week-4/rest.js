@@ -190,3 +190,50 @@ function clone(...args){
   return [...args];
 }
 console.log(clone(1 , 2 , 3));
+
+//Practice
+function addRest(...rest){
+  return rest.reduce((acc , n) => {
+    return acc + n;
+  }, 0);
+}
+console.log(addRest(10 , 20 , 30 , 40));
+
+function getRest (firstR , ...rest) {
+  return rest;
+}
+console.log(getRest(10 , 20 , 30 , 40));
+
+function findLargest (...rest) {
+  return Math.max(...rest);
+}
+console.log(findLargest(12 , 45 , 7 , 89 , 23));
+
+const userR1 = {
+  nameR: "Saif",
+  ageR: 22,
+  cityR: "Ranchi",
+  skillR: "JavaScript",
+  levelR: "Beginner"
+}
+const {nameR , ageR , ...restR} = userR1;
+console.log(restR);
+
+function calculateR(operation , ...rest){
+  if(operation === "sum"){
+   return rest.reduce((acc , n) => {
+    return acc + n;
+   })
+  }
+  else if (operation === "multiply"){
+   return rest.reduce((acc , n) => {
+    return acc * n;
+   })
+  }
+  else{
+  return "Invalid operation";
+  }
+}
+console.log(calculateR("sum" , 10 ,20 ,30));
+console.log(calculateR("multiply" , 2 ,3 ,4));
+console.log(calculateR("multipl" , 2 ,3 ,4));

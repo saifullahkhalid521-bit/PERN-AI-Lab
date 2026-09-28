@@ -267,3 +267,28 @@ const uniqueIds = [...new Set(users.map(u => u.id))];
 const uniqueUsers = uniqueIds.map(id => users.find(u => u.id === id));
 console.log(uniqueUsers);
 // console.log(uniqueIds);
+
+//practice
+const numbersS = [10 , 20 , 30 , 40];
+const copyS = [...numbersS];
+console.log(copyS);
+
+const frontendS = ["HTML" , "CSS" , "JS"];
+const backendS = ["Node" , "Ecpress"];
+const fullStackS = [...frontendS , ...backendS];
+console.log(fullStackS);
+
+const numbersS2 = [20 , 30 , 40];
+const newBig10 = [10 , ...numbersS2 , 50];
+console.log(newBig10);
+
+const nubmersS3 = [10 , 20 , 30 , 40];
+console.log(Math.max(...nubmersS3));
+
+const userS = {
+  name: "Saif",
+  age: 22
+}
+const userSaddItems = {...userS , city: "Ranchi" , skill: "Jharkhand"};
+console.log(userS);
+console.log(userSaddItems);
