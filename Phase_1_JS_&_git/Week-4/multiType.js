@@ -122,3 +122,45 @@ function dataCheck(val){
 console.log(dataCheck(fields))
 console.log(dataCheck(fields2))
 console.log(dataCheck(fields3))
+
+//set 2
+const productsW = [
+  { name: "Laptop", price: 50000 },
+  { name: "Mouse", price: 800 },
+  { name: "Keyboard", price: 1500 },
+  { name: "Monitor", price: 12000 }
+];
+const upProd = productsW.filter(ele => ele.price > 1000).map(ele => ele.name.toUpperCase());
+console.log(upProd);
+
+const usersW = [
+  { name: "Ali", age: 16, city: "Delhi" },
+  { name: "Saif", age: 22, city: "Ranchi" },
+  { name: "John", age: 25, city: "Mumbai" }
+];
+const usr = usersW.find(ele => ele.age >= 18)
+const {name , city , age} = usr;
+console.log(name , city);
+
+const marksW = [75 , 82 , 91 , 68 , 88];
+const checkMarks = marksW.some(ele => ele > 90) && marksW.every(ele => ele > 50);
+console.log(checkMarks);
+
+const expensesW = [
+  { category: "food", amount: 300 },
+  { category: "travel", amount: 500 },
+  { category: "food", amount: 200 },
+  { category: "shopping", amount: 800 },
+  { category: "travel", amount: 300 }
+];
+const expRedu = expensesW.reduce((acc , ele) => {
+  if(acc[ele.category]){
+    
+    acc[ele.category]+= ele.amount;
+  }
+  else {
+    acc[ele.category] = ele.amount;
+  }
+  return acc;
+},{})
+console.log(expRedu);
