@@ -187,3 +187,46 @@ console.log(combineW(
   [3, 4],
   [5, 6]
 ));
+
+const productsFinal = [
+  {
+    name: "Laptop",
+    category: "electronics",
+    price: 50000,
+    rating: 4.5,
+    tags: ["tech", "computer"]
+  },
+  {
+    name: "Mouse",
+    category: "electronics",
+    price: 800,
+    rating: 4.1,
+    tags: ["tech"]
+  },
+  {
+    name: "Phone",
+    category: "electronics",
+    price: 30000,
+    rating: 4.7,
+    tags: ["tech", "mobile"]
+  },
+  {
+    name: "Chair",
+    category: "furniture",
+    price: 5000,
+    rating: 3.8,
+    tags: ["home"]
+  }
+];
+
+function processProducts(...restProd){
+  return restProd.filter(ele => ele.rating >= 4.0)
+  .map(({name , price ,tags}) => ({
+    name,
+    price,
+    tags: [...tags, "recommended"]
+  }))
+  .sort((a , b) => b.price - a.price);
+}
+const resultFinal = processProducts(...productsFinal);
+console.log(resultFinal);
