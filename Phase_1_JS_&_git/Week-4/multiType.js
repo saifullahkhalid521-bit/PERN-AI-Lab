@@ -51,3 +51,116 @@ const newAvgStudents = avgMoreT80.map(ele => {
 })
 .sort((a , b) => b.average - a.average);
 console.log(newAvgStudents);
+
+//Set One
+const users = [
+  { name: "Charlie", role: "user", active: true },
+  { name: "Alice", role: "admin", active: true },
+  { name: "Bob", role: "user", active: false },
+  { name: "Diana", role: "admin", active: true }
+];
+const upDateStr = users.reduce((acc , n) => {
+  if (n.active){
+    acc.push(`${n.name} (${n.role})`);
+  }
+  return acc ;
+},[]).sort((a , b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+console.log(upDateStr);
+
+const cart = [
+  { item: "Book", price: 25, qty: 2 },
+  { item: "Pen", price: 3, qty: 5 },
+  { item: "Laptop", price: 999, qty: 1 }
+];
+const calcuCart = cart.reduce((acc , ele) => {
+  return acc + (ele.price * ele.qty);
+},0)
+if(calcuCart > 100){
+  console.log(calcuCart - (calcuCart / 10));
+}
+
+const users1 = [
+  { name: "Alice", age: 30, active: false },
+  { name: "Bob", age: 22, active: true },
+  { name: "Charlie", age: 25, active: true },
+  { name: "Diana", age: 19, active: false }
+];
+const youngAct = users1.filter(ele => ele.active).reduce((acc, n) => {
+  if(acc > n){
+    acc = n;
+  }else {
+    acc = acc;
+  }
+  return acc;
+})
+console.log(youngAct.name);
+
+const posts = [  
+  { title: "A", tags: ["js", "react"] },  
+  { title: "B", tags: ["react", "css"] },  
+  { title: "C", tags: ["js", "node"] }
+];
+
+const uniqueTags = [...new Set(
+  posts.reduce((acc, post) => [...acc, ...post.tags], [])
+)].sort();
+
+console.log(uniqueTags); 
+// Output: ["css", "js", "node", "react"]
+
+const fields = ["john", "doe", "john@example.com"];
+const fields2 = ["john", "", "john@example.com"];
+const fields3 = ["john", "doe", "notanemail"];
+function dataCheck(val){
+  if(val.every(ele => ele !== "") && val.some(ele => ele.includes("@"))){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+console.log(dataCheck(fields))
+console.log(dataCheck(fields2))
+console.log(dataCheck(fields3))
+
+//set 2
+const productsW = [
+  { name: "Laptop", price: 50000 },
+  { name: "Mouse", price: 800 },
+  { name: "Keyboard", price: 1500 },
+  { name: "Monitor", price: 12000 }
+];
+const upProd = productsW.filter(ele => ele.price > 1000).map(ele => ele.name.toUpperCase());
+console.log(upProd);
+
+const usersW = [
+  { name: "Ali", age: 16, city: "Delhi" },
+  { name: "Saif", age: 22, city: "Ranchi" },
+  { name: "John", age: 25, city: "Mumbai" }
+];
+const usr = usersW.find(ele => ele.age >= 18)
+const {name , city , age} = usr;
+console.log(name , city);
+
+const marksW = [75 , 82 , 91 , 68 , 88];
+const checkMarks = marksW.some(ele => ele > 90) && marksW.every(ele => ele > 50);
+console.log(checkMarks);
+
+const expensesW = [
+  { category: "food", amount: 300 },
+  { category: "travel", amount: 500 },
+  { category: "food", amount: 200 },
+  { category: "shopping", amount: 800 },
+  { category: "travel", amount: 300 }
+];
+const expRedu = expensesW.reduce((acc , ele) => {
+  if(acc[ele.category]){
+    
+    acc[ele.category]+= ele.amount;
+  }
+  else {
+    acc[ele.category] = ele.amount;
+  }
+  return acc;
+},{})
+console.log(expRedu);
