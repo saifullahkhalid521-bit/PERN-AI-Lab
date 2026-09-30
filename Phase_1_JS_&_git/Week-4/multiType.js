@@ -164,3 +164,26 @@ const expRedu = expensesW.reduce((acc , ele) => {
   return acc;
 },{})
 console.log(expRedu);
+
+const studentsW = [
+  { name: "Saif", marks: 85 },
+  { name: "Ali", marks: 92 },
+  { name: "John", marks: 78 },
+  { name: "Ego", marks: 92 }
+];
+const stdchek = studentsW.sort((a , b) => {
+  return b.marks - a.marks || a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+})
+console.log(stdchek);
+
+function combineW(...rest){
+  return rest.reduce((acc ,n) => {
+    acc.push(...n);
+    return acc;
+  },[]);
+}
+console.log(combineW(
+  [1, 2],
+  [3, 4],
+  [5, 6]
+));
