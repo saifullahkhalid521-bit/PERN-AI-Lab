@@ -240,3 +240,123 @@ async function namelo(){
   }
 }
 namelo();
+
+//Practice
+function getMessageA() {
+  return new Promise ((resolve , reject) => {
+    resolve("Hello from Promise 🥺")
+  })
+}
+async function getMessageAS() {
+  try{
+    let response = await getMessageA();
+    console.log(response);
+  }catch(err){
+    console.log(err);
+  }
+}
+getMessageAS();
+
+function getNameA() {
+  return new Promise ((resolve , reject) => {
+    setTimeout(()=>{
+      resolve({Name: "Saif"});
+    },1000);
+  })
+}
+function getAgeA() {
+  return new Promise ((resolve , reject) => {
+    setTimeout(()=>{
+      resolve({Age: 22});
+    },1000);
+  })
+}
+async function getNandA() {
+  try{
+    let response = await getNameA();
+    console.log(response.Name + "🥺");
+    let response1 = await getAgeA();
+    console.log(response1.Age + "🥺");
+  }catch(err){
+    console.log(err);
+  }
+}
+getNandA();
+
+function dataL(){
+  return new Promise((resolve , reject) => {
+    let val = Math.random();
+    if(val > 0.5){
+      resolve("Data loaded"+ "🥺")
+    }
+    else {
+      reject("Failed to load data"+ "🥺")
+    }
+  })
+}
+async function dataLa() {
+  try{
+    let response = await dataL();
+    console.log(response);
+  }catch(err){
+    console.log(err);
+  }
+}
+dataLa();
+
+function loginA(){
+  return new Promise ((res , rej) => {
+    setTimeout(()=>{
+      res("Login successful");
+    },1000);
+  })
+}
+function getProfileA(){
+  return new Promise ((res ,rej) => {
+    setTimeout(()=>{
+      res("Profile loaded");
+    },1000)
+  })
+}
+function getPostsA(){
+  return new Promise((res , rej) => {
+    setTimeout(()=>{
+      res("Posts loaded");
+    },1000);
+  })
+}
+async function getLPfP() {
+  try{
+    let resp = await loginA();
+    console.log(resp + "🥺");
+    let resp1 = await getProfileA();
+    console.log(resp1 + "🥺");
+    let resp2 = await getPostsA();
+    console.log(resp2 + "🥺");
+  }catch(err){
+    console.log("Something went wrong");
+  }
+}
+getLPfP();
+
+const userIdsA = [1 , 2 , 3];
+function getUserA(id){
+  
+    return new Promise((res , rej) => {
+      setTimeout(()=>{
+      res({id: id , name: `User ${id}`})
+      },1000);
+    })
+};
+async function getAllUsersA() {
+  const users = [];
+
+  for (const id of userIdsA) {
+    const user = await getUserA(id);
+    users.push(user);
+  }
+
+  console.log(users);
+}
+
+getAllUsersA();
