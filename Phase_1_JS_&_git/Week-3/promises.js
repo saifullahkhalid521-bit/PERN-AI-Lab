@@ -478,3 +478,92 @@ Promise.all([usr1 , usr2 , usr3])
   console.log(response[2].name + '🤏');
 })
 .catch((err) => err);
+
+//Practice
+new Promise ((resolve , reject) => {
+  setTimeout(()=>{
+    resolve('Task Completed 👽👽');
+  },2000);
+})
+.then((response) => {
+  console.log(response);
+})
+
+new Promise ((resolve ,reject) => {
+  let num = Math.random() * 10;
+  if(num > 5){
+    resolve("Success👽👽")
+  }else{
+    reject("Failed👽👽")
+  }
+})
+.then((response) => {
+  console.log(response);
+})
+.catch((err) => {
+  console.log(err);
+})
+
+new Promise ((resolve , reject) => {
+  resolve(10);
+})
+.then((response)=>{
+  return response * 2;
+}).then((response)=>{
+  return response + 5;
+}).then((response)=>{
+  console.log(response * 3 + "👽👽")
+})
+
+function getUserP () {
+  return new Promise ((resolve ,reject) => {
+    setTimeout(()=>{
+      let val = Math.random();
+      if(val < 0.5) {
+        resolve({name: "Saif" , age:22});
+      }
+      else{
+        reject("Failed to fetch user 👽👽");
+      }
+    },2000);
+  })
+}
+getUserP().then((response) => {
+  console.log(response.name + response.age + "👽👽");
+})
+.catch((err) => {
+  console.log(err);
+})
+
+function loginP () {
+  return new Promise ((resolve , reject) =>{
+    setTimeout(()=>{
+      resolve("Login Successful");
+    },1000)
+  })
+}
+function getProfileP () {
+  return new Promise ((resolve , reject) => {
+    setTimeout(() => {
+      resolve ("Profile Loaded")
+    },1000)
+  })
+}
+function getPostsP () {
+  return new Promise ((resolve , reject) => {
+    setTimeout(() => {
+      resolve ("Post loaded")
+    },1000)
+  })
+}
+loginP().then((response) => {
+  console.log(response +"👽👽");
+  return getProfileP();
+}).then((response) => {
+  console.log(response +"👽👽");
+  return getPostsP();
+}).then((response) => {
+  console.log(response +"👽👽");
+}).catch(() => {
+  console.log("Error found" +"👽👽");
+})
