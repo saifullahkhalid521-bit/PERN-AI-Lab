@@ -288,3 +288,43 @@ async function today01 () {
   }
 }
 today01();
+
+
+//Practice
+fetch('https://official-joke-api.appspot.com/jokes/programming/random')
+.then((resp) =>{
+  return resp.json();
+}).then((resp) => {
+  console.log("🤏🤏");
+  console.log(resp[0].setup);
+  console.log(resp[0].punchline);
+})
+
+async function fet1() {
+  try{
+    let resp = await fetch("https://jsonplaceholder.typicode.com/users")
+
+    let resp1 = await resp.json();
+    console.log(resp1);
+  }catch(err){
+    console.log(err);
+  }
+}
+fet1();
+
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((resp) =>{
+  return resp.json();
+})
+.then((resp)=>{
+  let newArr = resp.map(ele => ele.name);
+  console.log(newArr);
+})
+
+fetch("https://jsonplaceholder.typicode.com/users")
+.then(resp => resp.json())
+.then(resp => {
+  console.log('🤏👽')
+  const loco = resp.filter(ele => ele.address.city.includes('o'));
+  console.log(loco);
+});
