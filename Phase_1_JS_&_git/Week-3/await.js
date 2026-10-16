@@ -379,3 +379,19 @@ async function displayUserAsync() {
 }
 displayUserAsync();
 
+function greetAfterDelay(name , ms){
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(name) , ms);
+  })
+}
+
+async function run() {
+    try{
+      const res = await greetAfterDelay("Saif😈✅😈" , 2000);
+      console.log(res);
+    }catch(err){
+      console.log(err);
+    }
+}
+
+run();
