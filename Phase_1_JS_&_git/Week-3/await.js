@@ -360,3 +360,22 @@ async function getAllUsersA() {
 }
 
 getAllUsersA();
+
+function fetchUserDate(){
+  return new Promise ((resolve) => {
+    setTimeout(() => {
+      resolve ({id:1 , name: "Khalid✅✅✅" , role: "Developer"});
+    },1000);
+  });
+}
+
+async function displayUserAsync() {
+  try{
+    const res = await fetchUserDate();
+    console.log(`Fetched User: ${res.name}`);
+  } catch(err){
+    console.log("Error", err);
+  }
+}
+displayUserAsync();
+
