@@ -395,3 +395,29 @@ async function run() {
 }
 
 run();
+
+const getUser2 = new Promise ((resolve , reject)=>{
+  let error = false;
+  if (!error){
+    const user = {
+      name: 'Saif',
+      age: 22,
+      role: "Frontend Developer"
+    }
+    resolve(user);
+  }
+  else{
+    reject(new Error('User data nahi mila!'));
+  }
+})
+async function checkUser() {
+  try{
+    const response = await getUser2;
+    console.log(response.name);
+    console.log(response.role);
+  }
+  catch(err){
+    console.log('Erro: ', err);
+  }
+}
+checkUser();
