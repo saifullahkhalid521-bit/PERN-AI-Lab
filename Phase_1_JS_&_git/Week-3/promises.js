@@ -617,3 +617,18 @@ async function orderFoodAsync() {
   }
 }
 orderFoodAsync();
+
+function deliverOrder(itemName){
+  return new Promise ((resolve) => {
+    setTimeout(()=>{
+      resolve(`Delivered: ${itemName} to your doorstep!🛵`);
+    },2000);
+  })
+}
+async function prosessCompleteOrder(){
+    const res = await orderPizza();
+    console.log(res);
+    const res2 = await deliverOrder("Pizza");
+    console.log(res2);
+}
+prosessCompleteOrder();
