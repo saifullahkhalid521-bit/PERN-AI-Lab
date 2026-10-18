@@ -567,3 +567,24 @@ loginP().then((response) => {
 }).catch(() => {
   console.log("Error found" +"👽👽");
 })
+
+function orderPizza () {
+  return new Promise ((resolve) => {
+    setTimeout(()=>{
+      resolve("Your Farmhouse Pizza is ready😘😘")
+    },2000);
+  })
+}
+// orderPizza()
+// .then((response)=>{
+//   console.log(response);
+// })
+async function orderPizzaAsync() {
+  try{
+    const response = await orderPizza();
+    console.log(response);
+  }catch(err){
+    console.log(err);
+  }
+}
+orderPizzaAsync();
