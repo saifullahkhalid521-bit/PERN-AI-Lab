@@ -588,3 +588,32 @@ async function orderPizzaAsync() {
   }
 }
 orderPizzaAsync();
+
+function orderFood(itemName , isAvailable){
+  return new Promise ((resolve , reject) => {
+    setTimeout(()=>{
+      if(isAvailable === true){
+        resolve(`Order placed for ${itemName}!✅`);
+      }
+      else{
+        reject(`${itemName} is out of stock!✅`);
+      }
+    },2000);
+  })
+}
+// orderFood("Pizza" , false)
+// .then((res) =>{
+//   console.log(res);
+// })
+// .catch((err) => {
+//   console.log(err);
+// })
+async function orderFoodAsync() {
+  try{
+    const res = await orderFood("Samosa" , false);
+    console.log(res);
+  }catch(err){
+    console.log(err);
+  }
+}
+orderFoodAsync();
