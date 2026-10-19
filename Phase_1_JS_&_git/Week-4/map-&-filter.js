@@ -267,3 +267,20 @@ const studentsFlt = [
   {name: "Khalid" , marks: {maths:78 , physics: 81}},
 ]
 console.log(studentsFlt.filter(ele => ele.marks.maths >= 80 && ele.marks.physics >= 80));
+
+const priceInINR = [100 , 250 , 500 , 1200];
+const priceInINRgst = priceInINR.map((ele)=>{
+  return (ele * 0.18) + ele;
+})
+console.log(priceInINRgst);
+
+const productsF = [
+  { name: "Shirt", price: 400, category: "clothing" },
+  { name: "Laptop", price: 50000, category: "electronics" },
+  { name: "Jeans", price: 900, category: "clothing" },
+  { name: "Mobile", price: 15000, category: "electronics" }
+];
+const clothingProducts = productsF.filter(ele => {
+  return ele.category === "clothing";
+})
+console.log(clothingProducts);
