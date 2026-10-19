@@ -284,3 +284,26 @@ const clothingProducts = productsF.filter(ele => {
   return ele.category === "clothing";
 })
 console.log(clothingProducts);
+
+const cartItems = [
+  { name: "Shoes", price: 2000, quantity: 2 },
+  { name: "Watch", price: 1500, quantity: 1 },
+  { name: "Bag", price: 800, quantity: 3 }
+];
+
+const cartItemsTotal = cartItems.map(ele => {
+  ele["totalPrice"] = (ele.price * ele.quantity);
+  return ele;
+});
+console.log(cartItemsTotal);
+
+const storeProducts = [
+  { name: "T-Shirt", price: 500, inStock: true },
+  { name: "Jacket", price: 3000, inStock: false },
+  { name: "Cap", price: 250, inStock: true },
+  { name: "Sneakers", price: 4000, inStock: true },
+  { name: "Socks", price: 100, inStock: false }
+];
+console.log(storeProducts.filter(ele => {
+  return ele.inStock === true && ele.price <= 2000;
+}))
