@@ -468,3 +468,12 @@ const studentsE = [
   { name: "Ego", marks: { maths: 95, physics: 90 } }
 ];
 console.log(studentsE.every(elem => elem.marks.maths >= 80 && elem.marks.physics >= 80))
+
+const productsP = [
+  { id: 101, title: "Wireless Mouse", price: 500 },
+  { id: 102, title: "Mechanical Keyboard", price: 2500 },
+  { id: 103, title: "Gaming Headset", price: 1800 }
+];
+console.log(productsP.find(ele => {
+  return ele.id === 102;
+}))
