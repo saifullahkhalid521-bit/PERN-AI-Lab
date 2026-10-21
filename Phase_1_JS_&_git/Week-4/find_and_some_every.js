@@ -477,3 +477,13 @@ const productsP = [
 console.log(productsP.find(ele => {
   return ele.id === 102;
 }))
+
+const cartP = [
+  { name: "Socks", price: 150 },
+  { name: "T-shirt", price: 800 },
+  { name: "Cap", price: 300 }
+];
+
+console.log(cartP.some(ele => {
+  return ele.price > 500 ;
+}))
