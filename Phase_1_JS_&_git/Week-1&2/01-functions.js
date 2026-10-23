@@ -248,8 +248,25 @@ function minMazAvg (arr) {
   });
   const avg = sum / arr.length;
 
-  const max = Math.max(...arr);
-  const min = Math.min(...arr);
+  // const max = Math.max(...arr);
+  // const min = Math.min(...arr);
+  let max = 0;
+  arr.forEach(ele => {
+    if(max < ele){
+      max = ele;
+    }else{
+      max = max;
+    }
+  })
+
+  const min = arr.reduce((acc , ele) => {
+    if(acc > ele){
+      acc = ele;
+    }else{
+      acc = acc;
+    }
+    return acc;
+  }, arr[0]);
 
   return {avg , max , min};
 }
