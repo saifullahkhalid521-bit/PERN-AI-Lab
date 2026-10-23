@@ -212,3 +212,28 @@ const add4Ar = (n1 , n2) => {
   return n1 + n2;
 }
 console.log(add4Ar(6, 6));
+
+// calculator
+const add1 = (a, b) => a + b;
+const subtract1 = (a, b) => a - b;
+const multiply1 = (a, b) => a * b;
+const divide1 = (a, b) => b !== 0 ? a / b : "Cannot divide by zero";
+
+function calculator(n1 , n2 , opr){
+  if (opr === "+"){
+    return add1(n1 , n2);
+  } 
+  else if(opr === "-"){
+    return subtract1(n1 , n2);
+  } 
+  else if(opr === "*"){
+    return multiply1(n1 , n2);
+  }
+  else if(opr === "/"){
+    return divide1(n1 , n2);
+  }
+  else{
+    return "Not valid!";
+  }
+}
+console.log(calculator(5 , 5 , "/"));
