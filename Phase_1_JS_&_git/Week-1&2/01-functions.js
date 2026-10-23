@@ -194,3 +194,21 @@ const y = add;
 
 console.log(x1 + 2);
 console.log(y(5, 3));
+
+// function Declaration 
+function add4 (n1 , n2) {
+  return n1 + n2;
+}
+console.log(add4(4, 5));
+
+// function Expression 
+const add4Ex = function (n1 , n2) {
+  return n1 + n2;
+}
+console.log(add4Ex(2 , 3));
+
+// Arrow function 
+const add4Ar = (n1 , n2) => {
+  return n1 + n2;
+}
+console.log(add4Ar(6, 6));
