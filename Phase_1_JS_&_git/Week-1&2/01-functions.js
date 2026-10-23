@@ -194,3 +194,80 @@ const y = add;
 
 console.log(x1 + 2);
 console.log(y(5, 3));
+
+// function Declaration 
+function add4 (n1 , n2) {
+  return n1 + n2;
+}
+console.log(add4(4, 5));
+
+// function Expression 
+const add4Ex = function (n1 , n2) {
+  return n1 + n2;
+}
+console.log(add4Ex(2 , 3));
+
+// Arrow function 
+const add4Ar = (n1 , n2) => {
+  return n1 + n2;
+}
+console.log(add4Ar(6, 6));
+
+// calculator
+const add1 = (a, b) => a + b;
+const subtract1 = (a, b) => a - b;
+const multiply1 = (a, b) => a * b;
+const divide1 = (a, b) => b !== 0 ? a / b : "Cannot divide by zero";
+
+function calculator(n1 , n2 , opr){
+  if (opr === "+"){
+    return add1(n1 , n2);
+  } 
+  else if(opr === "-"){
+    return subtract1(n1 , n2);
+  } 
+  else if(opr === "*"){
+    return multiply1(n1 , n2);
+  }
+  else if(opr === "/"){
+    return divide1(n1 , n2);
+  }
+  else{
+    return "Not valid!";
+  }
+}
+console.log(calculator(5 , 5 , "/"));
+
+const testAr = [10 , 20 , 30 , 40];
+
+function minMazAvg (arr) {
+  
+  let sum = 0;
+  arr.forEach(ele => {
+    sum+=ele;
+  });
+  const avg = sum / arr.length;
+
+  // const max = Math.max(...arr);
+  // const min = Math.min(...arr);
+  let max = 0;
+  arr.forEach(ele => {
+    if(max < ele){
+      max = ele;
+    }else{
+      max = max;
+    }
+  })
+
+  const min = arr.reduce((acc , ele) => {
+    if(acc > ele){
+      acc = ele;
+    }else{
+      acc = acc;
+    }
+    return acc;
+  }, arr[0]);
+
+  return {avg , max , min};
+}
+console.log(minMazAvg(testAr));
