@@ -237,3 +237,20 @@ function calculator(n1 , n2 , opr){
   }
 }
 console.log(calculator(5 , 5 , "/"));
+
+const testAr = [10 , 20 , 30 , 40];
+
+function minMazAvg (arr) {
+  
+  let sum = 0;
+  arr.forEach(ele => {
+    sum+=ele;
+  });
+  const avg = sum / arr.length;
+
+  const max = Math.max(...arr);
+  const min = Math.min(...arr);
+
+  return {avg , max , min};
+}
+console.log(minMazAvg(testAr));
