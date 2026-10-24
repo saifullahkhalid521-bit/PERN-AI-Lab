@@ -174,3 +174,16 @@ const counter1 = outer1();
 console.log(counter1())
 console.log(counter1())
 console.log(counter1())
+
+// Counter function using closures
+function createCounter1 () {
+  let count = 0 ;
+  return function () {
+    count++;
+    console.log(count+"🤏");
+  }
+}
+const counter2 = createCounter1();
+counter2();
+counter2();
+counter2();
