@@ -153,3 +153,99 @@ account.deposit(500);
 account.withdraw(200);
 
 account.balance();
+
+const addC = (a) => {
+  return (b) => {
+    return a + b;
+  }
+}
+const addCS = addC(5);
+console.log(addCS(3));
+
+function outer1 () {
+  let count = 0;
+
+  function inner1 () {
+    return ++count ;
+  }
+  return inner1;
+}
+const counter1 = outer1();
+console.log(counter1())
+console.log(counter1())
+console.log(counter1())
+
+// Counter function using closures
+function createCounter1 () {
+  let count = 0 ;
+  return function () {
+    count++;
+    console.log(count+"🤏");
+  }
+}
+const counter2 = createCounter1();
+counter2();
+counter2();
+counter2();
+
+// once function 
+function once1(){
+  let count = 0;
+  return () => {
+    if(count === 0){
+      console.log("You called it once!");
+      count++;
+    }else{
+      console.log("can't use this funtion any more");
+    }
+  }
+}
+const call = once1();
+call();
+call();
+call();
+
+function once2(fn) {
+  let hasCalled = false;
+  let result;
+
+  return function (...args) {
+    if (!hasCalled){
+      hasCalled = true;
+      result = fn(...args);
+    }
+    return result;
+  }
+}
+const initialize = once2(() => {
+  console.log("Initializing database...");
+  return "Connected";
+})
+console.log(initialize());
+console.log(initialize());
+
+function createBankAccount1 (initialBalace){
+  let balance = initialBalace;
+  return {
+    deposit (amount) {  
+      balance+= amount;
+    },
+    getBalance () {
+      console.log(balance);
+    }
+  } 
+}
+const myAccount = createBankAccount1(1000);
+myAccount.deposit(500);
+myAccount.getBalance();
+
+function createMultiplier1 (factor) {
+  return (multiply) => {
+    return factor * multiply;
+  }
+}
+const double1 = createMultiplier1(2);
+const triple1 = createMultiplier1(3);
+
+console.log(double1(5));
+console.log(triple1(5));
