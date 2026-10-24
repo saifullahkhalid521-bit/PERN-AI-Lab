@@ -238,3 +238,14 @@ function createBankAccount1 (initialBalace){
 const myAccount = createBankAccount1(1000);
 myAccount.deposit(500);
 myAccount.getBalance();
+
+function createMultiplier1 (factor) {
+  return (multiply) => {
+    return factor * multiply;
+  }
+}
+const double1 = createMultiplier1(2);
+const triple1 = createMultiplier1(3);
+
+console.log(double1(5));
+console.log(triple1(5));
