@@ -223,3 +223,18 @@ const initialize = once2(() => {
 })
 console.log(initialize());
 console.log(initialize());
+
+function createBankAccount1 (initialBalace){
+  let balance = initialBalace;
+  return {
+    deposit (amount) {  
+      balance+= amount;
+    },
+    getBalance () {
+      console.log(balance);
+    }
+  } 
+}
+const myAccount = createBankAccount1(1000);
+myAccount.deposit(500);
+myAccount.getBalance();
