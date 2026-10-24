@@ -187,3 +187,39 @@ const counter2 = createCounter1();
 counter2();
 counter2();
 counter2();
+
+// once function 
+function once1(){
+  let count = 0;
+  return () => {
+    if(count === 0){
+      console.log("You called it once!");
+      count++;
+    }else{
+      console.log("can't use this funtion any more");
+    }
+  }
+}
+const call = once1();
+call();
+call();
+call();
+
+function once2(fn) {
+  let hasCalled = false;
+  let result;
+
+  return function (...args) {
+    if (!hasCalled){
+      hasCalled = true;
+      result = fn(...args);
+    }
+    return result;
+  }
+}
+const initialize = once2(() => {
+  console.log("Initializing database...");
+  return "Connected";
+})
+console.log(initialize());
+console.log(initialize());
