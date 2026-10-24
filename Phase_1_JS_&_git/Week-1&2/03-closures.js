@@ -153,3 +153,24 @@ account.deposit(500);
 account.withdraw(200);
 
 account.balance();
+
+const addC = (a) => {
+  return (b) => {
+    return a + b;
+  }
+}
+const addCS = addC(5);
+console.log(addCS(3));
+
+function outer1 () {
+  let count = 0;
+
+  function inner1 () {
+    return ++count ;
+  }
+  return inner1;
+}
+const counter1 = outer1();
+console.log(counter1())
+console.log(counter1())
+console.log(counter1())
