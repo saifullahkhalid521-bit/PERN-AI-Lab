@@ -122,3 +122,12 @@ console.log(account2.Balance);
 const account3 = {Balance: 3000};
 console.log(myAccount1.deposit.call(account3 , 500));
 
+const myObj = {
+  declarte : function  () {
+    console.log(this);
+  }
+  // declarte : ()  => {
+  //   console.log(this);
+  // }
+}
+myObj.declarte();
