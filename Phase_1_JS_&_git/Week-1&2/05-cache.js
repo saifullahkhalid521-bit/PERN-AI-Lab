@@ -104,3 +104,21 @@ console.log(myAccount1.deposit(500));
 console.log(myAccount1.Balance);
 console.log(myAccount1.withdraw(1600));
 console.log(myAccount1.Balance);
+
+console.log("🫡 🫡 🫡 🫡 🫡")
+// part 2 
+const account2 = {
+  Balance : 2000,
+}
+account2.deposit = myAccount1.deposit;
+account2.withdraw = myAccount1.withdraw;
+
+console.log(account2.Balance);
+console.log(account2.deposit(500));
+console.log(account2.Balance);
+console.log(account2.withdraw(5600));
+console.log(account2.Balance);
+
+const account3 = {Balance: 3000};
+console.log(myAccount1.deposit.call(account3 , 500));
+
