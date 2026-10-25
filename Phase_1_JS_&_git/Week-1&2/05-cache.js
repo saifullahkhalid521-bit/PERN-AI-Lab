@@ -80,3 +80,27 @@ const student2 ={
 student2.showDetails = student.showDetails;
 
 student2.showDetails();
+
+// using this and functions
+
+const myAccount1 = {
+  Balance : 1000, 
+
+  deposit (amount) {
+    this.Balance+= amount;
+    return this.Balance;
+  },
+
+  withdraw (amount) {
+    if(amount > this.Balance){
+      return "Balance is low.";
+    }
+    this.Balance-= amount;
+    return this.Balance;
+  }
+}
+console.log(myAccount1.Balance);
+console.log(myAccount1.deposit(500));
+console.log(myAccount1.Balance);
+console.log(myAccount1.withdraw(1600));
+console.log(myAccount1.Balance);
