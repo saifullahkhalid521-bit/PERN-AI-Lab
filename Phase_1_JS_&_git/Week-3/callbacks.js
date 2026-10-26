@@ -436,3 +436,17 @@ const cheapProducts = customFlt(products, function(item) {
   return item.price < 1000;
 });
 console.log(cheapProducts); 
+
+function disCal (totalPrice , callback) {
+  return callback(totalPrice);
+}
+
+const disOne = disCal(1000 , function (amt) {
+  return amt - (amt * 0.1);
+})
+console.log(disOne);
+
+const dis2 = disCal(5000 , function (amt) {
+  return amt - (amt * 0.2);
+})
+console.log(dis2);
