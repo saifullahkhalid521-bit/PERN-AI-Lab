@@ -410,3 +410,29 @@ function loginMsg(){
   console.log('you are loged in.👽');
 }
 login(1234 , loginMsg);
+
+// custom filter 
+function customFlt (arr ,callback){
+ let result = [];
+ for(let i = 0 ; i < arr.length; i++){
+  const currentElem = arr[i];
+  if(callback(currentElem)) {
+    result.push(currentElem);
+  }
+ }
+ return result;
+}
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+const evenNumbers = customFlt(numbers, function(num) {
+  return num % 2 === 0;
+});
+console.log(evenNumbers); 
+const products = [
+  { name: "Shirt", price: 800 },
+  { name: "Shoes", price: 2500 },
+  { name: "Cap", price: 400 }
+];
+const cheapProducts = customFlt(products, function(item) {
+  return item.price < 1000;
+});
+console.log(cheapProducts); 
