@@ -392,3 +392,61 @@ function test( user , callback){
 test('Khalid',()=>{
   return `Hello 😎`;
 });
+
+function greet1 (name , callback) {
+  console.log(`Hello ${name}`);
+  return callback() ;
+}
+function afterGreeting1(){
+  console.log("Greeting complete!");
+}
+greet1("Saif" , afterGreeting1);
+
+function login(password , callback){
+  console.log(`${password} is correct password!`);
+  return callback();
+}
+function loginMsg(){
+  console.log('you are loged in.👽');
+}
+login(1234 , loginMsg);
+
+// custom filter 
+function customFlt (arr ,callback){
+ let result = [];
+ for(let i = 0 ; i < arr.length; i++){
+  const currentElem = arr[i];
+  if(callback(currentElem)) {
+    result.push(currentElem);
+  }
+ }
+ return result;
+}
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+const evenNumbers = customFlt(numbers, function(num) {
+  return num % 2 === 0;
+});
+console.log(evenNumbers); 
+const products = [
+  { name: "Shirt", price: 800 },
+  { name: "Shoes", price: 2500 },
+  { name: "Cap", price: 400 }
+];
+const cheapProducts = customFlt(products, function(item) {
+  return item.price < 1000;
+});
+console.log(cheapProducts); 
+
+function disCal (totalPrice , callback) {
+  return callback(totalPrice);
+}
+
+const disOne = disCal(1000 , function (amt) {
+  return amt - (amt * 0.1);
+})
+console.log(disOne);
+
+const dis2 = disCal(5000 , function (amt) {
+  return amt - (amt * 0.2);
+})
+console.log(dis2);
