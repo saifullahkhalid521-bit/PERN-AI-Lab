@@ -392,3 +392,21 @@ function test( user , callback){
 test('Khalid',()=>{
   return `Hello 😎`;
 });
+
+function greet1 (name , callback) {
+  console.log(`Hello ${name}`);
+  return callback() ;
+}
+function afterGreeting1(){
+  console.log("Greeting complete!");
+}
+greet1("Saif" , afterGreeting1);
+
+function login(password , callback){
+  console.log(`${password} is correct password!`);
+  return callback();
+}
+function loginMsg(){
+  console.log('you are loged in.👽');
+}
+login(1234 , loginMsg);
