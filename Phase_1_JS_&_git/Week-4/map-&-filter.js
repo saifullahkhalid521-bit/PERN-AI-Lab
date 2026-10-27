@@ -307,3 +307,28 @@ const storeProducts = [
 console.log(storeProducts.filter(ele => {
   return ele.inStock === true && ele.price <= 2000;
 }))
+
+const products5 = [
+  { id: 1, name: "Laptop", price: 1200, inStock: true },
+  { id: 2, name: "Phone", price: 800, inStock: false },
+  { id: 3, name: "Headphones", price: 150, inStock: true },
+  { id: 4, name: "Mouse", price: 40, inStock: true }
+];
+
+const productsin500 = products5.filter((ele) => {
+  return ele.price < 500;
+})
+console.log(productsin500);
+
+const productId3 = products5.find(ele => ele.id === 3);
+console.log(productId3);
+
+const stockCheck = products5.every(ele => ele.inStock);
+console.log(stockCheck);
+const somePrdInStk = products5.some(ele => ele.inStock);
+console.log(somePrdInStk);
+
+const transform = products5.map(ele => {
+  return `${ele.name}:${ele.price}`
+})
+console.log(transform);
