@@ -319,3 +319,6 @@ const productsin500 = products5.filter((ele) => {
   return ele.price < 500;
 })
 console.log(productsin500);
+
+const productId3 = products5.find(ele => ele.id === 3);
+console.log(productId3);
