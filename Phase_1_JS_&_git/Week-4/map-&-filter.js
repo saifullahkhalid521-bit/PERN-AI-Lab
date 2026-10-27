@@ -327,3 +327,8 @@ const stockCheck = products5.every(ele => ele.inStock);
 console.log(stockCheck);
 const somePrdInStk = products5.some(ele => ele.inStock);
 console.log(somePrdInStk);
+
+const transform = products5.map(ele => {
+  return `${ele.name}:${ele.price}`
+})
+console.log(transform);
