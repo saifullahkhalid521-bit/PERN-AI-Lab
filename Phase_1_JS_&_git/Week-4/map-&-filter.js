@@ -322,3 +322,8 @@ console.log(productsin500);
 
 const productId3 = products5.find(ele => ele.id === 3);
 console.log(productId3);
+
+const stockCheck = products5.every(ele => ele.inStock);
+console.log(stockCheck);
+const somePrdInStk = products5.some(ele => ele.inStock);
+console.log(somePrdInStk);
