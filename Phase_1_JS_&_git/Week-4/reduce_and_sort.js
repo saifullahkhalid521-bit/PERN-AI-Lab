@@ -737,3 +737,14 @@ const studentsT = [
 ];
 const studentsTsh = [...studentsT];
 console.log(studentsTsh.sort((a , b) => a.marks - b.marks || a.name.toLowerCase().localeCompare(b.name.toLowerCase())));
+
+const cart6 = [
+  { name: "Laptop", price: 1200, qty: 1 },
+  { name: "Phone", price: 800, qty: 2 },
+  { name: "Mouse", price: 40, qty: 3 }
+];
+const totalPrice6 = cart6.reduce((acc , ele) => {
+  acc+=(ele.price * ele.qty)
+  return acc;
+}, 0);
+console.log("Total price is :" +totalPrice6);
