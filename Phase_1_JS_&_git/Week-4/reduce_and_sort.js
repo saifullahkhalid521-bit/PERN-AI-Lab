@@ -748,3 +748,15 @@ const totalPrice6 = cart6.reduce((acc , ele) => {
   return acc;
 }, 0);
 console.log("Total price is :" +totalPrice6);
+
+const itemsD6 = ["apple" , "banana" , "orange" , "apple" , "banana" , "apple" , "grapes"];
+const countD6 = itemsD6.reduce((acc , ele) => {
+  if(acc[ele]){
+    acc[ele]+=1;
+  }
+  else{
+    acc[ele] = 1;
+  }
+  return acc;
+},{})
+console.log(countD6);
