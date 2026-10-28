@@ -760,3 +760,14 @@ const countD6 = itemsD6.reduce((acc , ele) => {
   return acc;
 },{})
 console.log(countD6);
+
+const productsD6 = [
+  { name: "Laptop", price: 1200, rating: 4.5 },
+  { name: "Mouse", price: 40, rating: 4.8 },
+  { name: "Phone", price: 800, rating: 4.2 },
+  { name: "Keyboard", price: 80, rating: 4.6 }
+];
+const sortProductsD6 = [...productsD6].sort((a , b) => {
+  return a.price - b.price || b.rating - a.rating;
+})
+console.log(sortProductsD6);
