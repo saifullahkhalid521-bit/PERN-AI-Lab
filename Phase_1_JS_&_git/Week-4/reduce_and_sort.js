@@ -737,3 +737,63 @@ const studentsT = [
 ];
 const studentsTsh = [...studentsT];
 console.log(studentsTsh.sort((a , b) => a.marks - b.marks || a.name.toLowerCase().localeCompare(b.name.toLowerCase())));
+
+const cart6 = [
+  { name: "Laptop", price: 1200, qty: 1 },
+  { name: "Phone", price: 800, qty: 2 },
+  { name: "Mouse", price: 40, qty: 3 }
+];
+const totalPrice6 = cart6.reduce((acc , ele) => {
+  acc+=(ele.price * ele.qty)
+  return acc;
+}, 0);
+console.log("Total price is :" +totalPrice6);
+
+const itemsD6 = ["apple" , "banana" , "orange" , "apple" , "banana" , "apple" , "grapes"];
+const countD6 = itemsD6.reduce((acc , ele) => {
+  if(acc[ele]){
+    acc[ele]+=1;
+  }
+  else{
+    acc[ele] = 1;
+  }
+  return acc;
+},{})
+console.log(countD6);
+
+const productsD6 = [
+  { name: "Laptop", price: 1200, rating: 4.5 },
+  { name: "Mouse", price: 40, rating: 4.8 },
+  { name: "Phone", price: 800, rating: 4.2 },
+  { name: "Keyboard", price: 80, rating: 4.6 }
+];
+const sortProductsD6 = [...productsD6].sort((a , b) => {
+  return a.price - b.price || b.rating - a.rating;
+})
+console.log(sortProductsD6);
+
+const transactions = [
+  { id: 101, type: "credit", amount: 2500 },
+  { id: 102, type: "debit", amount: 150 },
+  { id: 103, type: "debit", amount: 45.50 },
+  { id: 104, type: "credit", amount: 1200 },
+  { id: 105, type: "debit", amount: 500 }
+];
+const totalBalance = transactions.reduce((acc , ele) => {
+  if(ele.type === "credit"){
+    acc+= ele.amount;
+  }
+  else if(ele.type === "debit"){
+    acc-= ele.amount;
+  }
+  return acc;
+},0)
+console.log(totalBalance);
+
+const totalSpending = transactions.reduce((acc , ele) => {
+  if(ele.type === "debit"){
+    acc+= ele.amount;
+  }
+  return acc;
+},0)
+console.log(totalSpending);
