@@ -771,3 +771,29 @@ const sortProductsD6 = [...productsD6].sort((a , b) => {
   return a.price - b.price || b.rating - a.rating;
 })
 console.log(sortProductsD6);
+
+const transactions = [
+  { id: 101, type: "credit", amount: 2500 },
+  { id: 102, type: "debit", amount: 150 },
+  { id: 103, type: "debit", amount: 45.50 },
+  { id: 104, type: "credit", amount: 1200 },
+  { id: 105, type: "debit", amount: 500 }
+];
+const totalBalance = transactions.reduce((acc , ele) => {
+  if(ele.type === "credit"){
+    acc+= ele.amount;
+  }
+  else if(ele.type === "debit"){
+    acc-= ele.amount;
+  }
+  return acc;
+},0)
+console.log(totalBalance);
+
+const totalSpending = transactions.reduce((acc , ele) => {
+  if(ele.type === "debit"){
+    acc+= ele.amount;
+  }
+  return acc;
+},0)
+console.log(totalSpending);
