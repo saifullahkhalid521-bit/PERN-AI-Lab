@@ -238,7 +238,13 @@ console.log(calculateR("sum" , 10 ,20 ,30));
 console.log(calculateR("multiply" , 2 ,3 ,4));
 console.log(calculateR("multipl" , 2 ,3 ,4));
 
-
 const fruits = ["apple", "banana", "orange"];
 const fruitsadd = [...fruits , 'grape'];
 console.log(fruitsadd);
+
+function calculateTotal (...price) {
+  return price.reduce((acc , ele)=> {
+    return acc + ele;
+  },0)
+}
+console.log(calculateTotal(12 , 34 , 1 , 43));
