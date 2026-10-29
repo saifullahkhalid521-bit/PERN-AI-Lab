@@ -292,3 +292,19 @@ const userS = {
 const userSaddItems = {...userS , city: "Ranchi" , skill: "Jharkhand"};
 console.log(userS);
 console.log(userSaddItems);
+
+
+const baseProduct = {
+  id: 1,
+  name: "Laptop",
+  price: 1200
+};
+
+const updates = {
+  price: 1150,
+  inStock: true,
+  category: "Electronics"
+};
+
+const mergedProduct = {...baseProduct, ...updates};
+console.log(mergedProduct);
