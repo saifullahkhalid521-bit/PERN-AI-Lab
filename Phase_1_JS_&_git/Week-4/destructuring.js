@@ -332,3 +332,14 @@ const dataD = [
 ];
 const [{name1Ds , skills1} , {skills2}]  = dataD;
 console.log({name1Ds} , {skills1} , skills2);
+
+const product = {
+  prid: 1,
+  prname: "Laptop",
+  price: 1200,
+  category: "Electronics",
+  inStock: true
+};
+
+const {prid , prname , price , category , inStock} = product; 
+console.log(prname , price);
