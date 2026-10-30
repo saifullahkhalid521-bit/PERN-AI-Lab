@@ -49,7 +49,6 @@ const expenses = [
   { description: "Concert", category: "Entertainment", amount: 100 }
 ];
 
-
 const catagory = {}
 for (const elem of expenses) {
   if(!catagory[elem.category]){
@@ -81,3 +80,14 @@ for (const elem of expenses){
   }
 }
 console.log(categoryTotal);
+
+const totalSpendReduceFun = expenses.reduce((acc , ele) => {
+  if(!acc[ele.category]){
+    acc[ele.category] = ele.amount;
+  }
+  else{
+    acc[ele.category]+= ele.amount;
+  }
+  return acc;
+},{});
+console.log(totalSpendReduceFun);
