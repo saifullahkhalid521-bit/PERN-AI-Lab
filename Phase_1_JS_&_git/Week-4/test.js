@@ -37,3 +37,26 @@ function Button({ variant, ...rest }) {
   return { className: `btn-${variant}`, ...rest };
 }
 console.log(Button({ variant: "primary", onClick: "fn", disabled: true }));
+
+
+
+
+const expenses = [
+  { description: "Groceries", category: "Food", amount: 50 },
+  { description: "Movie", category: "Entertainment", amount: 20 },
+  { description: "Restaurant", category: "Food", amount: 40 },
+  { description: "Electricity", category: "Bills", amount: 80 },
+  { description: "Concert", category: "Entertainment", amount: 100 }
+];
+
+const catagory = {}
+for (const elem of expenses) {
+  if(!catagory[elem.category]){
+    catagory[elem.category] = [elem]  
+  }
+  else{
+    catagory[elem.category].push(elem);
+  }
+}
+
+console.log(catagory);
