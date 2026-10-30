@@ -49,6 +49,7 @@ const expenses = [
   { description: "Concert", category: "Entertainment", amount: 100 }
 ];
 
+
 const catagory = {}
 for (const elem of expenses) {
   if(!catagory[elem.category]){
@@ -68,3 +69,15 @@ for (const elem of expenses){
   }
 }
 console.log(findExpensive);
+
+
+const categoryTotal = {};
+for (const elem of expenses){
+  if(!categoryTotal[elem.category]){
+    categoryTotal[elem.category] = elem.amount;
+  }
+  else {
+    categoryTotal[elem.category]+=elem.amount;
+  }
+}
+console.log(categoryTotal);
