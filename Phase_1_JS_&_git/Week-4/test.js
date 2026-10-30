@@ -60,3 +60,11 @@ for (const elem of expenses) {
 }
 
 console.log(catagory);
+
+let findExpensive = expenses[0];
+for (const elem of expenses){
+  if(elem.amount > findExpensive.amount){
+    findExpensive = elem;
+  }
+}
+console.log(findExpensive);
