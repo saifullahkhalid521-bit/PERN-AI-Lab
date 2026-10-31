@@ -328,3 +328,20 @@ fetch("https://jsonplaceholder.typicode.com/users")
   const loco = resp.filter(ele => ele.address.city.includes('o'));
   console.log(loco);
 });
+
+
+async function loading() {
+  try{
+    console.log("Loading...")
+    const res = await fetch("https://fakestoreapi.com/products/1");
+    console.log(res);
+    if(!res.ok){
+      throw new Error(`HTTP error!`);
+    }
+    const data = await res.json();
+    console.log("Success:", data);
+  } catch(err){ 
+    console.log(err);
+  } 
+}
+loading();
