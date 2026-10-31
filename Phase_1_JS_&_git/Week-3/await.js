@@ -421,3 +421,23 @@ async function checkUser() {
   }
 }
 checkUser();
+
+const ckh = new Promise((resolve, reject) => {
+  const isSussess = true;
+
+  if (isSussess) {
+    resolve("Data fetched successfully!🐻‍❄️");
+  } else {
+    reject("Something went wrong!🐻‍❄️");
+  }
+});
+
+async function chkAsync() {
+  try{
+    const res = await ckh;
+    console.log(res);
+  }catch(err){
+    console.log(err);
+  }
+}
+chkAsync();
