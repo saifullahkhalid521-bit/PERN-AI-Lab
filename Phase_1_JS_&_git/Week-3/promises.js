@@ -632,3 +632,21 @@ async function prosessCompleteOrder(){
     console.log(res2);
 }
 prosessCompleteOrder();
+
+const ckh = new Promise ((resolve , reject) => {
+
+  const isSussess = true;
+
+  if(isSussess){
+    resolve("Data fetched successfully!🐻‍❄️");
+  }
+  else {
+    reject("Something went wrong!🐻‍❄️");
+  }
+})
+ckh.then((res) => {
+  console.log(res);
+})
+.catch((err) => {
+  console.log(err);
+})
