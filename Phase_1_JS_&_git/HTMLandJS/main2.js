@@ -1,33 +1,48 @@
-const addBtn = document.querySelector("#addbtn");
-const areadiv = document.querySelector(".area");
-const text = document.querySelector(".text");
+console.log('hello world!');
+const nameInput = document.querySelector("#nameInput");
+const saveBtn = document.querySelector("#saveBtn");
+const display = document.querySelector("#display");
 
-// 1. Load existing items from localStorage on page load (or start with an empty array)
-let notes = JSON.parse(localStorage.getItem("notes")) || [];
+const user = {
+  name: "Saif",
+  age: 22,
+  skills:["JavaScript" , "React" , "Git"]
+};
 
-// Function to render the list on the screen
-function renderNotes() {
-  areadiv.innerHTML = notes.map(note => `<li>${note}</li>`).join("");
+localStorage.setItem("user", JSON.stringify(user));
+
+const savedUser = JSON.parse(localStorage.getItem("user"));
+
+console.log(savedUser);
+console.log(savedUser.name);
+console.log(savedUser.skills);
+
+
+const saveName = localStorage.getItem("userName");
+if (saveName) {
+  display.textContent = `Welcome back, ${saveName}`;
 }
+saveBtn.addEventListener("click", () => {
+  const name = nameInput.value;
+  localStorage.setItem("userName",name);
+  display.textContent = `Saved successfully: ${name}`;
+});
 
-// Render immediately when the script loads so saved items show up!
-renderNotes();
 
-addBtn.addEventListener("click", (e) => {
-  e.preventDefault(); // Stops form from refreshing the page
-  
-  const userInput = text.value.trim();
-  if (!userInput) return; // Ignore empty inputs
+const userInput = document.querySelector("#userInput");
+const themeSelect = document.querySelector("#themeSelect");
+const saveProfileBtn = document.querySelector("#saveProfileBtn");
+const profileDisplay = document.querySelector("#profileDisplay");
 
-  // 2. Push the new item into our array
-  notes.push(userInput);
-
-  // 3. Save the updated array to localStorage as a string
-  localStorage.setItem("notes", JSON.stringify(notes));
-
-  // 4. Re-render the list to show the new item
-  renderNotes();
-
-  // Clear the input box
-  text.value = "";
+const saveProfile = JSON.parse(localStorage.getItem("userProfile"));
+if(saveProfile){
+  profileDisplay.textContent = `Welcome back, ${saveProfile.name}! Theme: ${saveProfile.theme}`
+}
+saveProfileBtn.addEventListener("click" , ()=>{
+  const profileData = {
+    name: userInput.value,
+    theme: themeSelect.value
+  };
+  localStorage.setItem("userProfile", JSON.stringify(profileData));
+  profileDisplay.textContent = `Profile saved! ${profileData.name}, Theme: ${profileData.theme}`;
 });
