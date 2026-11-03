@@ -27,3 +27,22 @@ saveBtn.addEventListener("click", () => {
   localStorage.setItem("userName",name);
   display.textContent = `Saved successfully: ${name}`;
 });
+
+
+const userInput = document.querySelector("#userInput");
+const themeSelect = document.querySelector("#themeSelect");
+const saveProfileBtn = document.querySelector("#saveProfileBtn");
+const profileDisplay = document.querySelector("#profileDisplay");
+
+const saveProfile = JSON.parse(localStorage.getItem("userProfile"));
+if(saveProfile){
+  profileDisplay.textContent = `Welcome back, ${saveProfile.name}! Theme: ${saveProfile.theme}`
+}
+saveProfileBtn.addEventListener("click" , ()=>{
+  const profileData = {
+    name: userInput.value,
+    theme: themeSelect.value
+  };
+  localStorage.setItem("userProfile", JSON.stringify(profileData));
+  profileDisplay.textContent = `Profile saved! ${profileData.name}, Theme: ${profileData.theme}`;
+});
