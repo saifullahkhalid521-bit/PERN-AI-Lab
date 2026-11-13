@@ -1,17 +1,14 @@
-// PracticeApp.jsx
-import UserCard from './01-user-card';
+import UserCard from "./01-user-card";
 
-export default function Week09Practice() {
+function PracticeApp() {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Week 9: JSX & Components Practice</h1>
-      <hr />
-      
-      <h2>Practice 1: User Card</h2>
-      {/* Yahan hum apne component ko use kar rahe hain */}
-      <UserCard name="Aman" role="Frontend Developer" isOnline={true} />
-      <UserCard name="Riya" role="Backend Developer" isOnline={false} />
-      
+    <div>
+      <h1>My React Learing</h1>
+
+      <UserCard />
+      <UserCard />
     </div>
   );
 }
+
+export default PracticeApp;

@@ -1,10 +1,9 @@
-// 01-user-card.jsx
-function UserCard({ name, role, isOnline }) {
+function UserCard(){
   return (
-    <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px', borderRadius: '8px' }}>
-      <h3>{name}</h3>
-      <p>Role: {role}</p>
-      {isOnline ? <span style={{ color: 'green' }}>🟢 Online</span> : <span style={{ color: 'gray' }}>⚫ Offline</span>}
+    <div>
+      <h2>Saifullah</h2>
+      <p>Learning React</p>
+      <p>Future Full Stack Developer</p>
     </div>
   );
 }
