@@ -487,3 +487,33 @@ const cartP = [
 console.log(cartP.some(ele => {
   return ele.price > 500 ;
 }))
+
+const inventory = [
+  { id: 101, name: "Laptop", stock: 5 },
+  { id: 102, name: "Mouse", stock: 0 },
+  { id: 103, name: "Keyboard", stock: 12 },
+  { id: 104, name: "Monitor", stock: 2 }
+];
+const inventoryFind = inventory.find((ele => {
+  return ele.id === 103;
+}))
+console.log(inventoryFind);
+
+const inventory1 = [
+  { id: 101, name: "Laptop", stock: 5 },
+  { id: 102, name: "Mouse", stock: 0 },
+  { id: 103, name: "Keyboard", stock: 12 }
+];
+const inventory1Some = inventory1.some((ele => {
+  return ele.stock === 0;
+}))
+console.log(inventory1Some);
+
+const students1 = [
+  { name: "Ali", score: 75 },
+  { name: "Sara", score: 82 },
+  { name: "Zain", score: 60 }
+];
+console.log(students1.every((ele => {
+  return ele.score > 50;
+})))
