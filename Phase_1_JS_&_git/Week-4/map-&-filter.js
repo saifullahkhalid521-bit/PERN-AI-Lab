@@ -332,3 +332,26 @@ const transform = products5.map(ele => {
   return `${ele.name}:${ele.price}`
 })
 console.log(transform);
+
+const users1 = [
+  { id: 1, name: "rahul" },
+  { id: 2, name: "priya" },
+  { id: 3, name: "amit" }
+];
+
+const mapUser1 = users1.map((ele => {
+  return ele.name + " - VIP😊"
+}));
+
+console.log(mapUser1);
+
+const user1 = [
+  { id: 1, name: "Rahul", isActive: true },
+  { id: 2, name: "Priya", isActive: false },
+  { id: 3, name: "Amit", isActive: true },
+  { id: 4, name: "Neha", isActive: false }
+];
+const user1Fil = user1.filter((ele => {
+  return ele.isActive === true;
+}))
+console.log(user1Fil);
