@@ -8,7 +8,8 @@ export function PracticeApp() {
       <h1>My React Learning</h1>
 
       {/* <UserCard /> */}
-      <UserCard />
+      <UserCard name = "Saifullah Khalid🫡" />
+      <UserCard name = "Robot🤖" />
       <UserProfile/>
       <JsxBasics/>
     </div>
@@ -24,7 +25,9 @@ export function BrokenComponent () {
       <p style={{ color: "red" }}>Red Text</p>
       <br />
 
-      <MyInfo />
+      <MyInfo name = "Ego" city= "Ranchi" goal= "Fullstack Developer👽"/>
+      <MyInfo name="Robot" city="Pune" goal="Take over World👽"/>
+      <MyInfo name="Khalid" city="Delhi" goal="Frontend Dev👽"/>
     </div>
   )
 }
@@ -47,11 +50,12 @@ export function ProfileCard2 () {
 
   return (
     <>
+    <div style={{border: "2px solid white" , padding: "15px" , width: "300px" , margin: "auto"}}>
     <h2>My name is : {name}</h2>
     <p>My role is : {role}</p>
     <p>My skills are {skills.join(" . ")}</p>
     <p>My experience {1+ experience} years</p>
-    <div style={{border: "2px solid white" , padding: "15px" , width: "300px"}}></div>
+    </div>
     {/* Profile Card */}
     </>
     

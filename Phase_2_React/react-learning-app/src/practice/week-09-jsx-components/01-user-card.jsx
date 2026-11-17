@@ -1,7 +1,7 @@
-export function UserCard () {
+export function UserCard (props) {
   return (
     <div>
-      <h2>Saifullah</h2>
+      <h2>Hello {props.name}</h2>
       <p>Learning React</p>
       <p>Future Full Stack Developer</p>
     </div>
@@ -37,12 +37,12 @@ export function JsxBasics () {
   );
 }
 
-export function MyInfo () {
+export function MyInfo ({name , city , goal}) {
   return (
     <>
-    <h2>Ego</h2>
-    <p>Ranchi</p>
-    <p>my goal is Full-Stack Development</p>
+    <h2>{name}</h2>
+    <p>{city}</p>
+    <p>my goal is {goal}</p>
     <p>10 multiply by 5 is = {10 * 5} </p>
     </>
   );
