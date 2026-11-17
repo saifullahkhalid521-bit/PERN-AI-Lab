@@ -2,7 +2,7 @@
 // import UserProfile from "./01-user-card";
 import { UserCard, UserProfile , JsxBasics } from "./01-user-card";
 
-function PracticeApp() {
+export function PracticeApp() {
   return (
     <div>
       <h1>My React Learning</h1>
@@ -15,4 +15,15 @@ function PracticeApp() {
   );
 }
 
-export default PracticeApp;
+
+export function BrokenComponent () {
+  return (
+    <div className="box">
+      <h1>Hello</h1>
+      <img src="pic.jpg" alt="load jpg"/>
+      <p style={{ color: "red" }}>Red Text</p>
+      <br />
+    </div>
+  )
+}
+// export default PracticeApp;
