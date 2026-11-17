@@ -26,3 +26,10 @@ export function Product ({data}){
     </div>
   );
 }
+
+
+export function AlertButton ({onClickAction , label}) {
+  return (
+    <button onClick={onClickAction}> {label} </button>
+  );
+}
