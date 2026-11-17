@@ -1,7 +1,7 @@
 // import UserCard from "./01-user-card";
 // import UserProfile from "./01-user-card";
 import { UserCard, UserProfile , JsxBasics , MyInfo  } from "./01-user-card";
-import {Button, Greeting} from "./03-props"
+import {Button, Greeting , Product} from "./03-props"
 
 export function PracticeApp() {
   return (
@@ -18,7 +18,8 @@ export function PracticeApp() {
       <Greeting  />
       <Button text = "click Me"/>
       <Button text = "click Me" color = "red"/>
-
+      <Product data={{title: "Mobile" , price: "25000" , tags: ["electronics" , "tech"]}} />
+      {/* <Product /> */}
     </div>
   );
 }
