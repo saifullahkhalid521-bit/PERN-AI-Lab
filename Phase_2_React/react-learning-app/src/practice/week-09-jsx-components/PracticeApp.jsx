@@ -1,6 +1,6 @@
 // import UserCard from "./01-user-card";
 // import UserProfile from "./01-user-card";
-import { UserCard, UserProfile , JsxBasics } from "./01-user-card";
+import { UserCard, UserProfile , JsxBasics , MyInfo  } from "./01-user-card";
 
 export function PracticeApp() {
   return (
@@ -23,6 +23,8 @@ export function BrokenComponent () {
       <img src="pic.jpg" alt="load jpg"/>
       <p style={{ color: "red" }}>Red Text</p>
       <br />
+
+      <MyInfo />
     </div>
   )
 }

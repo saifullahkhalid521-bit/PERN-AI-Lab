@@ -36,3 +36,14 @@ export function JsxBasics () {
   </div>
   );
 }
+
+export function MyInfo () {
+  return (
+    <>
+    <h2>Ego</h2>
+    <p>Ranchi</p>
+    <p>my goal is Full-Stack Development</p>
+    <p>10 multiply by 5 is = {10 * 5} </p>
+    </>
+  );
+}
