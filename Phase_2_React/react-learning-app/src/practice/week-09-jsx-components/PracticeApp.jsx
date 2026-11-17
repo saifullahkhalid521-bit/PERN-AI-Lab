@@ -1,6 +1,11 @@
 // import UserCard from "./01-user-card";
 // import UserProfile from "./01-user-card";
 import { UserCard, UserProfile , JsxBasics , MyInfo  } from "./01-user-card";
+import {Button, Greeting , Product , AlertButton} from "./03-props"
+
+function clickBtn () {
+  console.log("Button clicked!");
+}
 
 export function PracticeApp() {
   return (
@@ -12,6 +17,16 @@ export function PracticeApp() {
       <UserCard name = "Robot🤖" />
       <UserProfile/>
       <JsxBasics/>
+      <Greeting name ="Saif Khalid" age ="22" />
+      <Greeting name ="Ego fragment" age ="220" />
+      <Greeting  />
+      <Button text = "click Me"/>
+      <Button text = "click Me" color = "red"/>
+      <Product data={{title: "Mobile" , price: "25000" , tags: ["electronics" , "tech"]}} />
+      {/* <Product /> */}
+
+      <AlertButton  label="Click to Alert"  onClickAction={clickBtn} />
+
     </div>
   );
 }
