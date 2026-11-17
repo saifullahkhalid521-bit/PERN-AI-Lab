@@ -28,4 +28,33 @@ export function BrokenComponent () {
     </div>
   )
 }
+
+export function StyledBox () {
+  const age = 22;
+  return (
+    <div className="styledBox" style={{backgroundColor : "lightblue" , padding: "20px" , border: "10px"}}>
+      <h3>2 + 2 = {2 + 2}</h3>
+      <p>I am {age} year old</p>
+    </div>
+  );
+}
+
+export function ProfileCard2 () {
+  const name = "Saifullah";
+  const role = "Front-end-developer";
+  const skills = ["HTML" , "CSS" , "JS"];
+  const experience = 2;
+
+  return (
+    <>
+    <h2>My name is : {name}</h2>
+    <p>My role is : {role}</p>
+    <p>My skills are {skills.join(" . ")}</p>
+    <p>My experience {1+ experience} years</p>
+    <div style={{border: "2px solid white" , padding: "15px" , width: "300px"}}></div>
+    {/* Profile Card */}
+    </>
+    
+  )
+}
 // export default PracticeApp;
