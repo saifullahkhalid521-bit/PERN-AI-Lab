@@ -1,6 +1,7 @@
 // import UserCard from "./01-user-card";
 // import UserProfile from "./01-user-card";
 import { UserCard, UserProfile , JsxBasics , MyInfo  } from "./01-user-card";
+import {Greeting} from "./03-props"
 
 export function PracticeApp() {
   return (
@@ -12,6 +13,7 @@ export function PracticeApp() {
       <UserCard name = "Robot🤖" />
       <UserProfile/>
       <JsxBasics/>
+      <Greeting name ="Saif Khalid" age ="22" />
     </div>
   );
 }
