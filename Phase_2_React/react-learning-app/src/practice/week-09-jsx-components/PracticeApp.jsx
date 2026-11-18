@@ -1,6 +1,7 @@
 // import UserProfile from "./01-user-card";
 import { UserCard, UserProfile , JsxBasics , MyInfo  } from "./01-user-card";
-import {Button, Greeting , Product , AlertButton} from "./03-props"
+import {Button, Greeting , Product , AlertButton} from "./03-props";
+import {UserList} from "./04-lists-map";
 
 function clickBtn () {
   console.log("Button clicked!");
@@ -24,6 +25,7 @@ export function PracticeApp() {
       <Product data={{title: "Mobile" , price: "25000" , tags: ["electronics" , "tech"]}} />
       {/* <Product /> */}
       <AlertButton  label="Click to Alert"  onClickAction={clickBtn} />
+      <UserList />
     </div>
   );
 }
@@ -89,6 +91,6 @@ export function MapOne () {
           {products.map((product) => (
           <Product key={product.id} data={product}/>
         ))}
-      </div>
+    </div>
   );
 }
