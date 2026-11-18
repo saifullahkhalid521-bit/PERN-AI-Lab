@@ -1,4 +1,3 @@
-// import UserCard from "./01-user-card";
 // import UserProfile from "./01-user-card";
 import { UserCard, UserProfile , JsxBasics , MyInfo  } from "./01-user-card";
 import {Button, Greeting , Product , AlertButton} from "./03-props"
@@ -24,9 +23,7 @@ export function PracticeApp() {
       <Button text = "click Me" color = "red"/>
       <Product data={{title: "Mobile" , price: "25000" , tags: ["electronics" , "tech"]}} />
       {/* <Product /> */}
-
       <AlertButton  label="Click to Alert"  onClickAction={clickBtn} />
-
     </div>
   );
 }
@@ -77,3 +74,21 @@ export function ProfileCard2 () {
   )
 }
 // export default PracticeApp;
+
+// --------- map in react ----------------
+
+const products = [
+  {id:1 , title: "Laptop" , price: 50000, tags: ["electronics" , "tech"]},
+  {id:2 , title: "Mobile" , price: 25000, tags: ["electronics" , "mobile"]},
+  {id:3 , title: "Headphones" , price: 2000, tags: ["audio" , "tech"]},
+];
+
+export function MapOne () {
+  return (
+    <div>
+          {products.map((product) => (
+          <Product key={product.id} data={product}/>
+        ))}
+      </div>
+  );
+}

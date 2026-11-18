@@ -1,4 +1,4 @@
-import {PracticeApp , BrokenComponent , StyledBox , ProfileCard2} from "./practice/week-09-jsx-components/PracticeApp";
+import {PracticeApp , BrokenComponent , StyledBox , ProfileCard2 , MapOne } from "./practice/week-09-jsx-components/PracticeApp";
 
 function App() {
   return (
@@ -7,6 +7,7 @@ function App() {
     <StyledBox/>
     <BrokenComponent/>
     <ProfileCard2/>
+    <MapOne/>
     </>
   );
 }
