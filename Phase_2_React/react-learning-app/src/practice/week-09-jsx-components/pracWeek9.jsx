@@ -15,4 +15,17 @@ export function Avatar ({imageUrl , name}) {
   );
 }
 
-
+export function Badge({ label, color = "gray" }) {
+  return (
+    <span
+      style={{
+        backgroundColor: color,
+        padding: "4px 10px",
+        borderRadius: "4px",
+        color: "#fff",
+      }}
+    >
+      {label}
+    </span>
+  );
+}
