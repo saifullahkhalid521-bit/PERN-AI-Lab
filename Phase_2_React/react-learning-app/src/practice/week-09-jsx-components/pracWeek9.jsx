@@ -29,3 +29,28 @@ export function Badge({ label, color = "gray" }) {
     </span>
   );
 }
+
+export function DetailCard({ title, description }) {
+  return (
+    <div style={{ border: "1px solid #ccc", padding: "16px", borderRadius: "8px", margin: "10px" }}>
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </div>
+  );
+}
+
+export function DaysList({ days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] }) {
+  return (
+    <div style={{ border: "1px solid #ddd", padding: "16px", borderRadius: "8px", margin: "10px" }}>
+      <h3>Days of the Week</h3>
+      <ul style={{ listStyleType: "none", padding: 0 }}>
+        {days.map((day, index) => (
+          <li key={index} style={{ padding: "6px 0", borderBottom: "1px solid #eee" }}>
+            {day}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
