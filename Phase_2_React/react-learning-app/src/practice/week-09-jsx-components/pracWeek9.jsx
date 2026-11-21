@@ -29,3 +29,12 @@ export function Badge({ label, color = "gray" }) {
     </span>
   );
 }
+
+export function DetailCard({ title, description }) {
+  return (
+    <div style={{ border: "1px solid #ccc", padding: "16px", borderRadius: "8px", margin: "10px" }}>
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </div>
+  );
+}
