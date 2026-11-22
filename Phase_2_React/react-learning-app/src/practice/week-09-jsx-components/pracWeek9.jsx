@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export function Heading ({text , size}) {
   return (
     <>
@@ -50,6 +52,37 @@ export function DaysList({ days = ["Monday", "Tuesday", "Wednesday", "Thursday",
           </li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+export function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    <div style={{ margin: "10px", padding: "10px", border: "1px solid #ddd" }}>
+      <h3>Count: {count}</h3>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
+    </div>
+  );
+}
+
+export function ColorBoxes() {
+  const colors = [
+    { name: "Red", color: "red" },
+    { name: "Green", color: "green" },
+    { name: "Blue", color: "blue" }
+  ];
+  return (
+    <div style={{ margin: "10px", padding: "10px", border: "1px solid #ddd" }}>
+      <h3>Color Boxes</h3>
+      <div style={{ display: "flex", gap: "10px" }}>
+        {colors.map((c, i) => (
+          <div key={i} style={{ width: "60px", height: "60px", backgroundColor: c.color, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}>
+            {c.name}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
