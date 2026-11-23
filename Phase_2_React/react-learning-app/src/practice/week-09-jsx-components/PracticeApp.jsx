@@ -2,6 +2,8 @@
 import { UserCard, UserProfile , JsxBasics , MyInfo  } from "./01-user-card";
 import {Button, Greeting , Product , AlertButton} from "./03-props";
 import {UserList} from "./04-lists-map";
+import {SimpleCard} from "./05-simple-card";
+import {FruitList} from "./06-fruit-list";
 
 function clickBtn () {
   console.log("Button clicked!");
@@ -26,6 +28,9 @@ export function PracticeApp() {
       {/* <Product /> */}
       <AlertButton  label="Click to Alert"  onClickAction={clickBtn} />
       <UserList />
+      <SimpleCard title="First Card" description="This is a simple card component using props" color="lightgreen" />
+      <SimpleCard title="Second Card" description="Another card with different props" color="lightyellow" />
+      <FruitList />
     </div>
   );
 }
