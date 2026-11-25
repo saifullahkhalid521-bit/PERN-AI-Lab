@@ -87,3 +87,11 @@ export function ColorBoxes() {
   );
 }
 
+export function ProductTag ({productName , price}) {
+  return (
+    <div style={{border : "1px solid pink" , padding: "10px"}}>
+      <h3>{productName}</h3>
+      <p>Price: ₹ {price}</p>
+    </div>
+  );
+}
