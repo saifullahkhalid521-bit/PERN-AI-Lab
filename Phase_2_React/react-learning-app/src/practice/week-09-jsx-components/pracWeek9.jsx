@@ -87,3 +87,51 @@ export function ColorBoxes() {
   );
 }
 
+export function ProductTag ({productName , price}) {
+  return (
+    <div style={{border : "1px solid pink" , padding: "10px"}}>
+      <h3>{productName}</h3>
+      <p>Price: ₹ {price}</p>
+    </div>
+  );
+}
+
+
+export function FruitList () {
+  const fruits = ["Apple" , "Banana" , "Mango" , "Orange"];
+  return (
+    <div>
+      {fruits.map((fruit , index) => (
+        <ul key={index}>
+          <li> {fruit}</li>
+        </ul>
+      ))}
+    </div>
+  );
+}
+
+
+export function StudentCard ({name , course}) {
+  return (
+    <div style={{border: "1px solid white"}}>
+      <h3>{name}</h3>
+      <p>{course}</p>
+    </div>
+  )
+}
+
+export function StudentList () {
+  const students = [
+    {id: 1 ,name: "Saif" , course: "React"},
+    {id: 2 ,name: "Khalid" , course: "Node.js"},
+    {id: 3 ,name: "Robot" , course: "AI"}
+  ];
+
+  return (
+    <div>
+      {students.map((student) => (
+        <StudentCard key={student.id} name = {student.name} course = {student.course}/>
+      ))}
+    </div>
+  )
+}
