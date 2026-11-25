@@ -95,3 +95,29 @@ export function ProductTag ({productName , price}) {
     </div>
   );
 }
+
+
+export function FruitList () {
+  const fruits = ["Apple" , "Banana" , "Mango" , "Orange"];
+  return (
+    <div>
+      {fruits.map((fruit , index) => (
+        <ul key={index}>
+          <li> {fruit}</li>
+        </ul>
+      ))}
+    </div>
+  );
+}
+
+
+// return (
+//     <div>
+//       {Users.map((user) => (
+//         <div key= {user.id} style={{ border: "2px solid white" , margin: "10px" , padding: "10px"}}>
+//         <h3>{user.name}</h3>
+//         <p>Your city is {user.city} & role is {user.role}</p>
+//       </div>
+//       ))}
+//     </div>
+//   );
