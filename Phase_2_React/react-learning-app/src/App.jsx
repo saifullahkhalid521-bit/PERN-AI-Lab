@@ -1,6 +1,6 @@
 import {PracticeApp , BrokenComponent , StyledBox , ProfileCard2 , MapOne } from "./practice/week-09-jsx-components/PracticeApp";
 
-import {Heading , Avatar , Badge, DetailCard, DaysList, Counter, ColorBoxes , ProductTag , FruitList} from "./practice/week-09-jsx-components/pracWeek9";
+import {Heading , Avatar , Badge, DetailCard, DaysList, Counter, ColorBoxes , ProductTag , FruitList , StudentList} from "./practice/week-09-jsx-components/pracWeek9";
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
     <ColorBoxes />
     <ProductTag productName = "Mobile" price = "23000"/>
     <FruitList/>
+    <StudentList/>
     </>
   );
 }

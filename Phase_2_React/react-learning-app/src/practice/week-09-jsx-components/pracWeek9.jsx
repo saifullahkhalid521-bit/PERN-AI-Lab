@@ -111,13 +111,27 @@ export function FruitList () {
 }
 
 
-// return (
-//     <div>
-//       {Users.map((user) => (
-//         <div key= {user.id} style={{ border: "2px solid white" , margin: "10px" , padding: "10px"}}>
-//         <h3>{user.name}</h3>
-//         <p>Your city is {user.city} & role is {user.role}</p>
-//       </div>
-//       ))}
-//     </div>
-//   );
+export function StudentCard ({name , course}) {
+  return (
+    <div style={{border: "1px solid white"}}>
+      <h3>{name}</h3>
+      <p>{course}</p>
+    </div>
+  )
+}
+
+export function StudentList () {
+  const students = [
+    {id: 1 ,name: "Saif" , course: "React"},
+    {id: 2 ,name: "Khalid" , course: "Node.js"},
+    {id: 3 ,name: "Robot" , course: "AI"}
+  ];
+
+  return (
+    <div>
+      {students.map((student) => (
+        <StudentCard key={student.id} name = {student.name} course = {student.course}/>
+      ))}
+    </div>
+  )
+}
