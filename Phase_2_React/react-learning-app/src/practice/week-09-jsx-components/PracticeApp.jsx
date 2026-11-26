@@ -2,8 +2,8 @@
 import { UserCard, UserProfile , JsxBasics , MyInfo  } from "./01-user-card";
 import {Button, Greeting , Product , AlertButton} from "./03-props";
 import {UserList} from "./04-lists-map";
-import {SimpleCard} from "./05-simple-card";
-import {FruitList} from "./06-fruit-list";
+import {SimpleCard} from "./prac-compo/05-simple-card";
+import {FruitList} from "./prac-compo/06-fruit-list";
 
 function clickBtn () {
   console.log("Button clicked!");
