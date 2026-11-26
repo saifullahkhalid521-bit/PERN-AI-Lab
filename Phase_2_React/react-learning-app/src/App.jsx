@@ -2,8 +2,8 @@ import {PracticeApp , BrokenComponent , StyledBox , ProfileCard2 , MapOne } from
 
 import {Heading , Avatar , Badge, DetailCard, DaysList, Counter, ColorBoxes , ProductTag , FruitList , StudentList , Maping} from "./practice/week-09-jsx-components/pracWeek9";
 
-import { WeatherCard } from "./practice/week-09-jsx-components/09-weather-card";
-import { ProfileStats } from "./practice/week-09-jsx-components/10-profile-stats";
+import { WeatherCard } from "./practice/week-09-jsx-components/prac-compo/09-weather-card";
+import { ProfileStats } from "./practice/week-09-jsx-components/prac-compo/10-profile-stats";
 
 function App() {
   return (
