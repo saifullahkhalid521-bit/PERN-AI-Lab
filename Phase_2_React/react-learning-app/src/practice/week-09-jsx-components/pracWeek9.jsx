@@ -135,3 +135,22 @@ export function StudentList () {
     </div>
   )
 }
+
+const students1 = [
+    {id: 1 ,name: "Saif" , course: "React"},
+    {id: 2 ,name: "Khalid" , course: "Node.js"},
+    {id: 3 ,name: "Robot" , course: "AI"}
+  ];
+
+export function Maping () {
+  return (
+    <div>
+      {students1.map((student) => (
+        <div key={student.id} style={{border: "1px solid green" , padding: "10px"}}>
+          <h2>{student.name}</h2>
+          <h3>{student.course}</h3>
+        </div>
+      ))}
+    </div>
+  )
+}
